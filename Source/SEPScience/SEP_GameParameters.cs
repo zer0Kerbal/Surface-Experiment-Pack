@@ -53,5 +53,13 @@ namespace SEPScience
 		{
 			get { return "Surface Experiment Package"; }
 		}
+
+		public override bool Enabled(System.Reflection.MemberInfo member, GameParameters parameters)
+		{
+			if (member.Name == "fadeOut")
+				return false;
+
+			return true;
+		}
 	}
 }
