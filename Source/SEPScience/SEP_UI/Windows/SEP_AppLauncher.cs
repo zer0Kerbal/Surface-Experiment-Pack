@@ -1,26 +1,32 @@
 ﻿#region license
-/*The MIT License (MIT)
+/* Copyright (c) 2016, DMagic
+All rights reserved.
+
 SEP_AppLauncher - App launcher button for controlling the SEP window
 
-Copyright (c) 2016 DMagic
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+1. Redistributions of source code must retain the above copyright notice, this
+   list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
 
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
+The views and conclusions contained in the software and documentation are those
+of the authors and should not be interpreted as representing official policies,
+either expressed or implied, of the FreeBSD Project.
 */
 #endregion
 
@@ -29,6 +35,7 @@ using System.Collections;
 using System.Collections.Generic;
 using SEPScience.Unity.Unity;
 using SEPScience.Unity.Interfaces;
+using SEPScience.SEP_UI.Toolbar;
 using KSP.UI.Screens;
 using UnityEngine;
 
@@ -50,11 +57,13 @@ namespace SEPScience.SEP_UI.Windows
 		private bool processed;
 		private bool windowSticky;
 		private bool _windowMinimized;
-		private bool _isVisible = true;
+		private bool _isVisible;
 
 		private DictionaryValueList<Guid, SEP_VesselSection> vessels;
 		private int _currentVessel;
 		private string _currentBody;
+
+		private SEP_Blizzy_Toolbar toolbar;
 
 		public static SEP_AppLauncher Instance
 		{
@@ -234,6 +243,9 @@ namespace SEPScience.SEP_UI.Windows
 
 		public void SetAppState(bool on)
 		{
+			if (button == null)
+				return;
+
 			if (on)
 				button.SetTrue(true);
 			else
@@ -280,6 +292,9 @@ namespace SEPScience.SEP_UI.Windows
 		private void Start()
 		{
 			settings = HighLogic.CurrentGame.Parameters.CustomParams<SEP_GameParameters>();
+
+			if (!settings.stockToolbar && ToolbarManager.ToolbarAvailable)
+				toolbar = gameObject.AddComponent<SEP_Blizzy_Toolbar>();
 		}
 
 		private void OnDestroy()
@@ -307,11 +322,35 @@ namespace SEPScience.SEP_UI.Windows
 
 			if (compactWindow != null)
 				Destroy(compactWindow.gameObject);
+
+			if (toolbar != null)
+				Destroy(toolbar);
 		}
 
 		private void onSettingsApplied()
 		{
 			settings = HighLogic.CurrentGame.Parameters.CustomParams<SEP_GameParameters>();
+
+			if (settings.stockToolbar)
+			{
+				if (button == null)
+					StartCoroutine(onReadyWait());
+
+				if (toolbar != null)
+					Destroy(toolbar);
+
+				toolbar = null;
+			}
+			else
+			{
+				if (toolbar == null)
+					toolbar = gameObject.AddComponent<SEP_Blizzy_Toolbar>();
+
+				if (button != null)
+					ApplicationLauncher.Instance.RemoveModApplication(button);
+
+				button = null;
+			}
 
 			if (window != null)
 				window.SetScale(settings.scale);
@@ -322,7 +361,8 @@ namespace SEPScience.SEP_UI.Windows
 		
 		private void onReady()
 		{
-			StartCoroutine(onReadyWait());
+			if (settings.stockToolbar)
+				StartCoroutine(onReadyWait());
 		}
 
 		private IEnumerator onReadyWait()
@@ -362,7 +402,8 @@ namespace SEPScience.SEP_UI.Windows
 
 			processed = true;
 
-			button.Enable(false);
+			if (button != null)
+				button.Enable(false);
 		}
 
 		private void processVesselSections()
@@ -391,9 +432,7 @@ namespace SEPScience.SEP_UI.Windows
 			if (vessels.Contains(v.id))
 				vessels[v.id].AddExperiment(h);
 			else
-			{
-
-			}
+				addVesselSection(v);
 		}
 
 		private void onExpDeactivate(Vessel v, SEP_ExperimentHandler h)
@@ -497,40 +536,44 @@ namespace SEPScience.SEP_UI.Windows
 			vessels.Remove(v.id);
 		}
 
-		private void onTrue()
+		public void onTrue()
 		{
 			Open();
 
 			windowSticky = true;
 		}
 
-		private void onFalse()
+		public void onFalse()
 		{
 			Close();
 		}
 
 		private void onHover()
 		{
-			Open();
+			if (settings.hoverOpen)
+				Open();
 		}
 
 		private void onHoverOut()
 		{
-			if (windowSticky)
+			if (settings.hoverOpen)
 			{
-				if (_windowMinimized)
+				if (windowSticky)
 				{
-					if (compactWindow != null)
-						compactWindow.FadeOut();
+					if (_windowMinimized)
+					{
+						if (compactWindow != null)
+							compactWindow.FadeOut();
+					}
+					else
+					{
+						if (window != null)
+							window.FadeOut();
+					}
 				}
 				else
-				{
-					if (window != null)
-						window.FadeOut();
-				}
+					Close();
 			}
-			else
-				Close();
 		}
 
 		private Vector3 getAnchor()
