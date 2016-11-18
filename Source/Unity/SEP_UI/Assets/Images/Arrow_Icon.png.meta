@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: ae6ac4fc8b071e6478cef49b5132e467
-timeCreated: 1472397547
+guid: 0e0e0442cb89049489be1e193ad9cd25
+timeCreated: 1476816113
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
@@ -52,5 +52,5 @@ TextureImporter:
     sprites: []
   spritePackingTag: 
   userData: 
-  assetBundleName: sep_images
+  assetBundleName: 
   assetBundleVariant: 
