@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<KSPedia xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="sep_kspedia" CreatedTime="-8587221267536276699">
+<KSPedia xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Name="sep_kspedia" CreatedTime="-8587221240688130349">
   <Categories>
     <Category Name="Surface Experiment Package">
       <Title>Surface Experiment Package</Title>
       <TitleScreen>Header</TitleScreen>
       <Screens />
       <Subcategories>
-        <Subcategory Name="Plug It In">
+        <Subcategory Name="Plug In">
           <Title>Plug It In</Title>
           <TitleScreen>Plug_In</TitleScreen>
           <Screens />
           <Subcategories />
         </Subcategory>
-        <Subcategory Name="Turn It On">
+        <Subcategory Name="Turn On">
           <Title>Turn It On</Title>
           <TitleScreen>Turn_On</TitleScreen>
           <Screens />
           <Subcategories />
         </Subcategory>
-        <Subcategory Name="Let It Run">
+        <Subcategory Name="Let Run">
           <Title>Let It Run</Title>
           <TitleScreen>Let_Run</TitleScreen>
           <Screens />
           <Subcategories />
         </Subcategory>
-        <Subcategory Name="Watch It Work">
+        <Subcategory Name="Watch Work">
           <Title>Watch It Work</Title>
           <TitleScreen>Watch_Work</TitleScreen>
           <Screens />
@@ -111,13 +111,13 @@
 </Text>
         </Text>
         <Text Name="TitleNote">
-          <Text>*Note:</Text>
+          <Text>*Note: </Text>
         </Text>
         <Text Name="TitleNote/Text">
           <Text>Vessel name can be changed from the SEP Central Station context menu.</Text>
         </Text>
         <Text Name="TransmitNote">
-          <Text>**Note:</Text>
+          <Text>**Note: </Text>
         </Text>
         <Text Name="TransmitNote/Text">
           <Text>Autotransmit only available when tech tree upgrade is purchased.</Text>
@@ -143,7 +143,7 @@
         <Text Name="Experiments/Text">
           <Text>•	Each experiment has three increasing levels of science data: basic, detailed, and exhaustive.
 •	Each level rewards science points from a single pool; e.g. completing the basic experiment will count for 66% of the detailed and 50% of the exhaustive experiments’ science data.
-•	The max available experiment level is influenced by the instrument's calibration.
+•	The max available experiment level is determined by the instrument's calibration.
 </Text>
         </Text>
         <Text Name="EVA">
@@ -172,38 +172,44 @@
           <Text>Use KIS and KAS* to attach all instruments to the surface and connect to each other.</Text>
         </Text>
         <Text Name="Plug_Points">
-          <Text>AKI power plug attachment points.</Text>
+          <Text>AKI power plug attachment points</Text>
         </Text>
         <Text Name="Link">
-          <Text>Power connection link.
+          <Text>Power connection link
 </Text>
         </Text>
         <Text Name="Socket">
-          <Text>Empty power connection socket.</Text>
+          <Text>Empty power connection socket</Text>
         </Text>
         <Text Name="Plugs">
-          <Text>AKI Power Transfer Conduit.</Text>
+          <Text>AKI Power Transfer Conduit</Text>
         </Text>
         <Text Name="Tool">
-          <Text>Equipped KIS/KAS connection tool.
-</Text>
+          <Text>Equipped KIS/KAS connection tool</Text>
         </Text>
         <Text Name="Attach">
-          <Text>Attach power plugs to experiment socket points.</Text>
+          <Text>Attach power plugs to experiment socket points</Text>
         </Text>
         <Text Name="Station">
-          <Text>The SEP Central Station is required for all experiments and serves as a control hub and transmitter.</Text>
+          <Text>The SEP Central Station is required for all experiments and serves as a control hub and transmitter</Text>
         </Text>
         <Text Name="Power">
-          <Text>Attach the included SEP girder and solar panels, or an RTG to power experiments.
+          <Text>Attach the included SEP girder and solar panels, or an RTG to power experiments
 </Text>
         </Text>
         <Text Name="Experiment">
-          <Text>Attached SEP experiment.
+          <Text>Attached SEP experiment
 </Text>
         </Text>
         <Text Name="Inventory">
-          <Text>Load up the KIS inventory with SEP parts.
+          <Text>Load up the KIS inventory with SEP parts
+</Text>
+        </Text>
+        <Text Name="RedNote">
+          <Text>* Note: </Text>
+        </Text>
+        <Text Name="RedNote/Text">
+          <Text>KIS and KAS by Kospy and IgorZ
 </Text>
         </Text>
       </Text>
@@ -260,7 +266,7 @@
         <Text Name="Byline/Text">
           <Text>AlbertKermin: Original concept, parts, and science results
 CobaltWolf: Part models and textures
-DMagic: Plugin coding, and experiment design</Text>
+DMagic: Plugin coding and experiment design</Text>
         </Text>
       </Text>
       <Tooltips />
