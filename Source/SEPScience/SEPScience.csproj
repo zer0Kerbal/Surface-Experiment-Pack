@@ -58,6 +58,8 @@
     <Compile Include="SEP_RecoveryWatcher.cs" />
     <Compile Include="SEP_UIWindow.cs" />
     <Compile Include="SEP_UI\SEP_TextMeshProHolder.cs" />
+    <Compile Include="SEP_UI\Toolbar\SEP_Blizzy_Toolbar.cs" />
+    <Compile Include="SEP_UI\Toolbar\SEP_toolbarwrapper.cs" />
     <Compile Include="SEP_UI\Windows\SEP_AppLauncher.cs" />
     <Compile Include="SEP_UI\Windows\SEP_ExperimentSection.cs" />
     <Compile Include="SEP_UI\Windows\SEP_VesselSection.cs" />
