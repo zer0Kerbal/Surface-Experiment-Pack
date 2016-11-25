@@ -735,10 +735,10 @@ namespace SEPScience
 			experimentRunning = false;
 			submittedData = 0;
 
-			updateHandler(false);
-
 			lastBackgroundCheck = 0;
 			completion = 0;
+
+			updateHandler(true);
 
 			SEP_Controller.Instance.updateVessel(vessel);
 
