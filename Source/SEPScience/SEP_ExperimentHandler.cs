@@ -66,7 +66,7 @@ namespace SEPScience
 
 		public SEP_ExperimentHandler(ModuleSEPScienceExperiment mod, ConfigNode node)
 		{
-			//SEPUtilities.log("Creating SEP Handler from module...", logLevels.log);
+			//SEP_Utilities.log("Creating SEP Handler from module...", logLevels.log);
 
 			experimentID = mod.experimentID;
 			instantResults = mod.instantResults;
@@ -96,7 +96,7 @@ namespace SEPScience
 
 		public SEP_ExperimentHandler(ProtoPartModuleSnapshot snap, Vessel v)
 		{
-			//SEPUtilities.log("Creating SEP Handler from config node...", logLevels.log);
+			//SEP_Utilities.log("Creating SEP Handler from config node...", logLevels.log);
 
 			ConfigNode node = snap.moduleValues;
 
@@ -167,7 +167,7 @@ namespace SEPScience
 				if (id != flightID)
 					return;
 
-				//SEPUtilities.log("Saving Handler from loaded vessel", logLevels.error);
+				//SEP_Utilities.log("Saving Handler from loaded vessel", logLevels.error);
 
 				protoHost.moduleValues.SetValue("experimentRunning", experimentRunning.ToString());
 				protoHost.moduleValues.SetValue("calibration", calibration.ToString());
@@ -187,7 +187,7 @@ namespace SEPScience
 				if (id != flightID)
 					return;
 
-				//SEPUtilities.log("Saving Handler from proto vessel", logLevels.error);
+				//SEP_Utilities.log("Saving Handler from proto vessel", logLevels.error);
 
 				node.SetValue("experimentRunning", experimentRunning.ToString());
 				node.SetValue("calibration", calibration.ToString());
