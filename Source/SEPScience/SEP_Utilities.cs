@@ -58,7 +58,7 @@ namespace SEPScience
 		public static void log(string message, logLevels l, params object[] objs)
 		{
 			message = string.Format(message, objs);
-			string log = string.Format("[SEP Science] {0}", message);
+			string log = string.Format("[SEP_Science] {0}", message);
 			switch (l)
 			{
 				case logLevels.log:
