@@ -370,6 +370,9 @@ namespace SEPScience.SEP_UI.Windows
 			if (h.vessel != vessel)
 				return;
 
+			if (experiments.Contains(h))
+				return;
+
 			SEP_ExperimentSection section = new SEP_ExperimentSection(h, h.vessel);
 
 			if (section == null)
