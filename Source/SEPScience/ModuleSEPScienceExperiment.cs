@@ -607,6 +607,7 @@ namespace SEPScience
 			if (handler == null)
 				return;
 
+			handler.vessel = vessel;
 			handler.submittedData = submittedData;
 			handler.experimentRunning = experimentRunning;
 
@@ -656,13 +657,11 @@ namespace SEPScience
 
 			submittedData = handler.getSubmittedData();			
 
+			updateHandler(true);
+
 			setController(findController());
 
-			SEP_Utilities.onExperimentActivate.Fire(vessel, handler);
-
 			powerIsProblem = false;
-
-			updateHandler(true);
 
 			if (controller != null)
 				controller.addConnectecExperiment(this);
@@ -676,6 +675,8 @@ namespace SEPScience
 			Events["DeployExperiment"].active = true;
 			Events["CalibrateEvent"].active = false;
 			Events["RetractEvent"].active = !oneShotAnim;
+
+			SEP_Utilities.onExperimentActivate.Fire(handler.vessel, handler);
 		}
 
 		[KSPEvent(guiActive = false, externalToEVAOnly = true, guiActiveUnfocused = true, active = false)]
@@ -736,8 +737,6 @@ namespace SEPScience
 
 			updateHandler(false);
 
-			SEP_Utilities.onExperimentDeactivate.Fire(handler.vessel, handler);
-
 			lastBackgroundCheck = 0;
 			completion = 0;
 
@@ -749,6 +748,8 @@ namespace SEPScience
 			Events["PauseExperiment"].active = false;
 			Events["CalibrateEvent"].active = true;
 			Events["RetractEvent"].active = false;
+
+			SEP_Utilities.onExperimentDeactivate.Fire(handler.vessel, handler);
 		}
 
 		private void animator(Animation a, string name, float speed, float time)
