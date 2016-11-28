@@ -196,7 +196,7 @@ namespace SEPScience
 			requiredPartList = SEP_Utilities.parsePartStringList(requiredParts);
 			requiredModuleList = SEP_Utilities.parseModuleStringList(requiredModules);
 
-			GameEvents.onVesselSituationChange.Add(sitChange);
+			//GameEvents.onVesselSituationChange.Add(sitChange);
 			SEP_Utilities.onWindowSpawn.Add(onWindowSpawn);
 			SEP_Utilities.onWindowDestroy.Add(onWindowDestroy);
 		}
@@ -238,9 +238,12 @@ namespace SEPScience
 			GameEvents.onGamePause.Remove(onPause);
 			GameEvents.onGameUnpause.Remove(onUnPause);
 			GameEvents.onVesselStandardModification.Remove(onVesselModified);
-			GameEvents.onVesselSituationChange.Remove(sitChange);
+			//GameEvents.onVesselSituationChange.Remove(sitChange);
 			SEP_Utilities.onWindowSpawn.Remove(onWindowSpawn);
 			SEP_Utilities.onWindowDestroy.Remove(onWindowDestroy);
+
+			if (handler != null)
+				handler.OnDestroy();
 		}
 
 		private void Update()
@@ -607,9 +610,14 @@ namespace SEPScience
 			if (handler == null)
 				return;
 
+			//SEP_Utilities.log("Updating Handler...", logLevels.warning);
+
+			handler.host = this;
 			handler.vessel = vessel;
 			handler.submittedData = submittedData;
 			handler.experimentRunning = experimentRunning;
+			flightID = (int)part.flightID;
+			handler.flightID = flightID;
 
 			if (forward)
 			{
@@ -936,31 +944,31 @@ namespace SEPScience
 				ScreenMessages.PostScreenMessage(string.Format("<color=orange>[{0}]: Not all data was stored.</color>", target.part.partInfo.title), 6, ScreenMessageStyle.UPPER_LEFT);
 		}
 
-		private void sitChange(GameEvents.HostedFromToAction<Vessel, Vessel.Situations> FT)
-		{
-			if (FT.host == null)
-				return;
+		//private void sitChange(GameEvents.HostedFromToAction<Vessel, Vessel.Situations> FT)
+		//{
+		//	if (FT.host == null)
+		//		return;
 
-			if (FT.host != vessel)
-				return;
+		//	if (FT.host != vessel)
+		//		return;
 
-			if (FT.to == Vessel.Situations.LANDED)
-				return;
+		//	if (FT.to == Vessel.Situations.LANDED)
+		//		return;
 
-			completion = 0;
-			calibration = 0;
+		//	completion = 0;
+		//	calibration = 0;
 
-			if (handler != null)
-			{
-				handler.completion = 0;
-				handler.calibration = 0;
-			}
+		//	if (handler != null)
+		//	{
+		//		handler.completion = 0;
+		//		handler.calibration = 0;
+		//	}
 
-			if (!experimentRunning)
-				return;
+		//	if (!experimentRunning)
+		//		return;
 
-			PauseExperiment();
-		}
+		//	PauseExperiment();
+		//}
 
 		public void gatherScience(bool silent = false)
 		{
@@ -1187,7 +1195,10 @@ namespace SEPScience
 			if (handler == null)
 				return;
 
-			handler.GetData().Add(data);
+			if (handler.hasData(data))
+				return;
+
+			handler.addData(data);
 
 			Events["CollectData"].active = true;
 			Events["ReviewDataEvent"].active = true;
@@ -1223,7 +1234,7 @@ namespace SEPScience
 			if (handler == null)
 				return;
 
-			if (handler.GetData().Contains(data))
+			if (handler.hasData(data))
 				handler.removeData(data);
 
 			Events["CollectData"].active = false;
