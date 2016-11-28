@@ -236,7 +236,7 @@ namespace SEPScience
 
 				string biome = currentBiome(exp, handler.vessel);
 
-				string id = string.Format("{0}@{1}{2}{3}", exp.id, handler.vessel.mainBody.name, ExperimentSituations.SrfLanded, biome);
+				string id = string.Format("{0}@{1}{2}{3}", exp.id, handler.vessel.mainBody.name, ExperimentSituations.SrfLanded, biome.Replace(" ", ""));
 
 				if (subjects.Any(s => s.id == id))
 				{
