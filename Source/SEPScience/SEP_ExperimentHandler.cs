@@ -330,6 +330,21 @@ namespace SEPScience
 			return basicExperiment;
 		}
 
+		public bool hasData(ScienceData data)
+		{
+			for (int i = storedData.Count - 1; i >= 0; i--)
+			{
+				ScienceData d = storedData[i];
+
+				if (d.subjectID != data.subjectID)
+					continue;
+
+				return true;
+			}
+
+			return false;
+		}
+
 		public void addData(ScienceData data)
 		{
 			storedData.Clear();
