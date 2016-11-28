@@ -259,6 +259,9 @@ namespace SEPScience
 							if (mod.moduleName != "ModuleSEPScienceExperiment")
 								continue;
 
+							if (!mod.moduleValues.HasValue("IsDeployed") || mod.moduleValues.GetValue("IsDeployed") != "True")
+								continue;
+
 							SEP_ExperimentHandler handler = new SEP_ExperimentHandler(mod, v);
 
 							if (handler.loaded)
@@ -369,6 +372,9 @@ namespace SEPScience
 						continue;
 
 					if (!m.loaded)
+						continue;
+
+					if (!m.vessel.Landed)
 						continue;
 
 					if (!m.experimentRunning)
