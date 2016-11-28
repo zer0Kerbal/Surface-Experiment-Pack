@@ -48,6 +48,8 @@ namespace SEPScience.Unity.Unity
 		private float fastFadeDuration = 0.2f;
 		[SerializeField]
 		private float slowFadeDuration = 0.5f;
+		[SerializeField]
+		private TextHandler VersionText = null;
 
 		private bool dragging;
 		private Vector2 mouseStart;
@@ -86,6 +88,9 @@ namespace SEPScience.Unity.Unity
 			CreateVesselSection(windowInterface.CurrentVessel);
 
 			transform.localScale *= window.Scale;
+
+			if (VersionText != null)
+				VersionText.OnTextUpdate.Invoke("v" + window.Version);
 		}
 
 		public void SetScale(float scale)

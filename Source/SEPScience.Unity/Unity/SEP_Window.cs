@@ -59,6 +59,8 @@ namespace SEPScience.Unity.Unity
 		private RectTransform VesselExpansion = null;
 		[SerializeField]
 		private TextHandler VesselPanelHandle = null;
+		[SerializeField]
+		private TextHandler VersionText = null;
 
 		private Vector2 mouseStart;
 		private Vector3 windowStart;
@@ -174,6 +176,9 @@ namespace SEPScience.Unity.Unity
 			}
 
 			transform.localScale *= window.Scale;
+
+			if (VersionText != null)
+				VersionText.OnTextUpdate.Invoke("v" + window.Version);
 		}
 
 		public void SetScale(float scale)

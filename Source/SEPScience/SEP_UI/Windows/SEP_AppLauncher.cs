@@ -33,6 +33,7 @@ either expressed or implied, of the FreeBSD Project.
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using SEPScience.Unity.Unity;
 using SEPScience.Unity.Interfaces;
 using SEPScience.SEP_UI.Toolbar;
@@ -50,13 +51,15 @@ namespace SEPScience.SEP_UI.Windows
 		private static Vector3 _windowPos;
 		private ApplicationLauncherButton button;
 
+		private string _version;
+
 		private SEP_Window window;
 		private SEP_Compact compactWindow;
 		private SEP_GameParameters settings;
 
 		private bool processed;
 		private bool windowSticky;
-		private bool _windowMinimized;
+		private static bool _windowMinimized;
 		private bool _isVisible;
 
 		private DictionaryValueList<Guid, SEP_VesselSection> vessels;
@@ -111,6 +114,11 @@ namespace SEPScience.SEP_UI.Windows
 		{
 			get { return _windowPos; }
 			set { _windowPos = value; }
+		}
+
+		public string Version
+		{
+			get { return _version; }
 		}
 
 		public IList<IVesselSection> GetVessels
@@ -291,6 +299,16 @@ namespace SEPScience.SEP_UI.Windows
 
 		private void Start()
 		{
+			Assembly assembly = AssemblyLoader.loadedAssemblies.GetByAssembly(Assembly.GetExecutingAssembly()).assembly;
+			var ainfoV = Attribute.GetCustomAttribute(assembly, typeof(AssemblyInformationalVersionAttribute)) as AssemblyInformationalVersionAttribute;
+			switch (ainfoV == null)
+			{
+				case true: _version = "";
+					break;
+				default: _version = ainfoV.InformationalVersion;
+					break;
+			}
+
 			settings = HighLogic.CurrentGame.Parameters.CustomParams<SEP_GameParameters>();
 
 			if (!settings.stockToolbar && ToolbarManager.ToolbarAvailable)
