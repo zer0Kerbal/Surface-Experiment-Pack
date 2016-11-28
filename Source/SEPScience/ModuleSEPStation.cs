@@ -37,6 +37,7 @@ using System.Linq;
 using System.Reflection;
 using SEPScience.SEP_UI.Windows;
 using UnityEngine;
+using Experience.Effects;
 
 namespace SEPScience
 {
@@ -111,11 +112,18 @@ namespace SEPScience
 			experiments = new List<ModuleSEPScienceExperiment>(maxExperiments);
 
 			if (animated && !string.IsNullOrEmpty(animationName))
+			{
 				anim = part.FindModelAnimators(animationName)[0];
+				anim.wrapMode = WrapMode.Clamp;
+				anim.playAutomatically = false;
+				anim.cullingType = AnimationCullingType.BasedOnRenderers;
+				anim.Stop(animationName);
+				animator(anim, animationName, -1, 0);
+			}
 
 			if (IsDeployed)
 			{
-				animator(anim, animationName, 1, 1);
+				animator(anim, animationName, 1, 1, true);
 				scalar = 1;
 			}
 
@@ -577,7 +585,7 @@ namespace SEPScience
 			Events["RetractEvent"].active = false;
 		}
 
-		private void animator(Animation a, string name, float speed, float time)
+		private void animator(Animation a, string name, float speed, float time, bool force = false)
 		{
 			if (a == null)
 				return;
@@ -589,6 +597,8 @@ namespace SEPScience
 				a[name].normalizedTime = time;
 				a.Blend(name);
 			}
+			else if (force)
+				a[name].normalizedTime = time;
 		}
 
 		[KSPEvent(guiActive = false, guiActiveUnfocused = true, externalToEVAOnly = true, active = false)]
@@ -599,7 +609,7 @@ namespace SEPScience
 
 			if (!FlightGlobals.ActiveVessel.isEVA)
 			{
-				ScreenMessages.PostScreenMessage("Must be one EVA to activate this experiment", 5f, ScreenMessageStyle.UPPER_CENTER);
+				ScreenMessages.PostScreenMessage("Must be on EVA to activate this experiment", 5f, ScreenMessageStyle.UPPER_CENTER);
 				return;
 			}
 
@@ -608,9 +618,9 @@ namespace SEPScience
 			if (crew == null)
 				return;
 
-			if (crew.experienceTrait.TypeName != "Scientist")
+			if (crew.HasEffect<ExternalExperimentSkill>())
 			{
-				ScreenMessages.PostScreenMessage("Kerbal must be scientist", 5f, ScreenMessageStyle.UPPER_CENTER);
+				ScreenMessages.PostScreenMessage("Kerbal must have external experiment skill", 5f, ScreenMessageStyle.UPPER_CENTER);
 				return;
 			}
 
