@@ -63,6 +63,7 @@ namespace SEPScience
 		public string experimentID;
 
 		private List<ScienceData> storedData = new List<ScienceData>();
+		private Game currentGame;
 
 		public SEP_ExperimentHandler(ModuleSEPScienceExperiment mod, ConfigNode node)
 		{
@@ -129,7 +130,19 @@ namespace SEPScience
 
 			OnLoad(node);
 
+			//if (vessel.mainBody.bodyName == "Kerbin")
+			//{
+			//	SEP_Utilities.log("Load - Experiment: {0} - Completion: {1:P0} - Science Data: {2} - Check Time: {3:N2} - UT: {4:N2}"
+			//		, logLevels.log
+			//		, experimentTitle
+			//		, completion
+			//		, storedData.Count > 0 ? storedData[0].title : "None"
+			//		, lastBackgroundCheck
+			//		, Planetarium.GetUniversalTime());
+			//}
+
 			GameEvents.onProtoPartModuleSnapshotSave.Add(onProtoSave);
+			GameEvents.onGameStateCreated.Add(GameCreated);
 
 			loaded = true;
 		}
@@ -146,6 +159,11 @@ namespace SEPScience
 			experimentTitle = detailedExperiment.experimentTitle;
 
 			return true;
+		}
+
+		private void GameCreated(Game game)
+		{
+			currentGame = game;
 		}
 
 		public void onProtoSave(GameEvents.FromToAction<ProtoPartModuleSnapshot, ConfigNode> FTA)
@@ -180,12 +198,30 @@ namespace SEPScience
 			//This is the standard method used when saving
 			else
 			{
+				if (currentGame != null && HighLogic.LoadedScene == GameScenes.SPACECENTER)
+				{
+					if (lastBackgroundCheck > currentGame.UniversalTime)
+						return;
+				}
+
 				int id = 0;
 
 				node.TryGetValue("flightID", ref id);
 
 				if (id != flightID)
 					return;
+
+				//if (vessel.mainBody.bodyName == "Kerbin")
+				//{
+				//	SEP_Utilities.log("Save - Experiment: {0} - Completion: {1:P0} - Science Data: {2} - Check Time: {3:N2} - UT: {4:N2} - Game UT: {5:N2}"
+				//		, logLevels.log
+				//		, experimentTitle
+				//		, completion
+				//		, storedData.Count > 0 ? storedData[0].title : "None"
+				//		, lastBackgroundCheck
+				//		, Planetarium.GetUniversalTime()
+				//		, currentGame == null ? -1000 : currentGame.UniversalTime);
+				//}
 
 				//SEP_Utilities.log("Saving Handler from proto vessel", logLevels.error);
 
@@ -202,6 +238,7 @@ namespace SEPScience
 		public void OnDestroy()
 		{
 			GameEvents.onProtoPartModuleSnapshotSave.Remove(onProtoSave);
+			GameEvents.onGameStateCreated.Remove(GameCreated);
 		}
 
 		public void OnSave(ConfigNode node)
