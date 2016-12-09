@@ -613,17 +613,6 @@ namespace SEPScience
 				return;
 			}
 
-			ProtoCrewMember crew = FlightGlobals.ActiveVessel.GetVesselCrew().FirstOrDefault();
-
-			if (crew == null)
-				return;
-
-			if (crew.HasEffect<ExternalExperimentSkill>())
-			{
-				ScreenMessages.PostScreenMessage("Kerbal must have external experiment skill", 5f, ScreenMessageStyle.UPPER_CENTER);
-				return;
-			}
-
 			int l = experiments.Count;
 
 			for (int i = 0; i < l; i++)
