@@ -44,7 +44,7 @@ namespace SEPScience
 		public bool showAllVessels;
 		[GameParameters.CustomParameterUI("Window Fade Out", toolTip = "This controls whether the window fades out when not in focus", autoPersistance = true)]
 		public bool fadeOut = true;
-		[GameParameters.CustomFloatParameterUI("Scale", minValue = 0.5f, maxValue = 2, displayFormat = "P0", autoPersistance = true)]
+		[GameParameters.CustomFloatParameterUI("Scale", asPercentage = true, minValue = 0.5f, maxValue = 2, displayFormat = "N2", autoPersistance = true)]
 		public float scale = 1;
 		[GameParameters.CustomParameterUI("Stock Toolbar", autoPersistance = true)]
 		public bool stockToolbar = true;
