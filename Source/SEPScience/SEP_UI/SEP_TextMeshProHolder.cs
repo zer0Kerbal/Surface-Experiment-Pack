@@ -43,6 +43,8 @@ namespace SEPScience.SEP_UI
 
 		new private void Awake()
 		{
+			m_isAlignmentEnumConverted = true;
+
 			base.Awake();
 
 			_handler = GetComponent<TextHandler>();

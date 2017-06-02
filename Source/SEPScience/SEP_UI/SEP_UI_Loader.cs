@@ -165,8 +165,8 @@ namespace SEPScience.SEP_UI
 			Color c = text.color;
 			int i = text.fontSize;
 			bool r = text.raycastTarget;
-			FontStyles sty = getStyle(text.fontStyle);
-			TextAlignmentOptions align = getAnchor(text.alignment);
+			FontStyles sty = TMPProUtil.FontStyle(text.fontStyle);
+			TextAlignmentOptions align = TMPProUtil.TextAlignment(text.alignment);
 			float spacing = text.lineSpacing;
 			GameObject obj = text.gameObject;
 
@@ -182,56 +182,12 @@ namespace SEPScience.SEP_UI
 			tmp.fontStyle = sty;
 			tmp.lineSpacing = spacing;
 
-			tmp.font = Resources.Load("Fonts/Calibri SDF", typeof(TMP_FontAsset)) as TMP_FontAsset;
+			tmp.font = UISkinManager.TMPFont;
 			tmp.fontSharedMaterial = Resources.Load("Fonts/Materials/Calibri Dropshadow", typeof(Material)) as Material;
 
 			tmp.enableWordWrapping = true;
 			tmp.isOverlay = false;
 			tmp.richText = true;
-		}
-
-		private FontStyles getStyle(FontStyle style)
-		{
-			switch (style)
-			{
-				case FontStyle.Normal:
-					return FontStyles.Normal;
-				case FontStyle.Bold:
-					return FontStyles.Bold;
-				case FontStyle.Italic:
-					return FontStyles.Italic;
-				case FontStyle.BoldAndItalic:
-					return FontStyles.Bold;
-				default:
-					return FontStyles.Normal;
-			}
-		}
-
-		private TextAlignmentOptions getAnchor(TextAnchor anchor)
-		{
-			switch (anchor)
-			{
-				case TextAnchor.UpperLeft:
-					return TextAlignmentOptions.TopLeft;
-				case TextAnchor.UpperCenter:
-					return TextAlignmentOptions.Top;
-				case TextAnchor.UpperRight:
-					return TextAlignmentOptions.TopRight;
-				case TextAnchor.MiddleLeft:
-					return TextAlignmentOptions.MidlineLeft;
-				case TextAnchor.MiddleCenter:
-					return TextAlignmentOptions.Midline;
-				case TextAnchor.MiddleRight:
-					return TextAlignmentOptions.MidlineRight;
-				case TextAnchor.LowerLeft:
-					return TextAlignmentOptions.BottomLeft;
-				case TextAnchor.LowerCenter:
-					return TextAlignmentOptions.Bottom;
-				case TextAnchor.LowerRight:
-					return TextAlignmentOptions.BottomRight;
-				default:
-					return TextAlignmentOptions.Center;
-			}
 		}
 
 		private static Sprite processSliderSprites(Slider slider, bool back, ref Color color)
