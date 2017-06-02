@@ -1041,6 +1041,12 @@ namespace SEPScience
 				return false;
 			}
 
+			if (handler.basicExperiment == null)
+			{
+				SEP_Utilities.log("SEP Experiment definition is null; stopping experiment\npossible errors or corruption present in the SEP ScienceDefs file", logLevels.warning);
+				failMessage = "Experiment error; check log files";
+				return false;
+			}
 			if (Inoperable)
 			{
 				failMessage = "Experiment is no longer functional";
