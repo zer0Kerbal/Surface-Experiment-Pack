@@ -535,7 +535,9 @@ namespace SEPScience
 			int level = exp.getMaxLevel(false);
 			float science = exp.currentMaxScience(level);
 
-			if (science > exp.submittedData)
+			//SEP_Utilities.log("Science Value Check: {0}\nVessel: {1}\nScience: {2:F4}\nSubmitted Science: {3:F4}", logLevels.warning, exp.experimentTitle, exp.vessel.vesselName, science, exp.submittedData);
+
+			if (science > (exp.submittedData + (science / 10)))
 				return transmitData(exp, level, exp.submittedData, science);
 
 			return false;
