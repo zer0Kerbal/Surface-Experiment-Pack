@@ -83,6 +83,11 @@ namespace SEPScience
 			get { return "Surface Experiment Package"; }
 		}
 
+		public override string DisplaySection
+		{
+			get { return "Surface Experiment Package"; }
+		}
+
 		public override int SectionOrder
 		{
 			get { return 0; }

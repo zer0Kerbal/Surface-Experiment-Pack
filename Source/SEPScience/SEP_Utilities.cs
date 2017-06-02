@@ -34,6 +34,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using KSP.Localization;
 using UnityEngine;
 
 namespace SEPScience
@@ -71,6 +72,11 @@ namespace SEPScience
 					Debug.LogError(log);
 					break;
 			}
+		}
+
+		public static string LocalizeBodyName(this string input)
+		{
+			return Localizer.Format("<<1>>", input);
 		}
 
 		public static void loadPartModules()
@@ -256,7 +262,7 @@ namespace SEPScience
 
 			string biome = currentBiome(exp, handler.vessel);
 
-			ScienceSubject sub = ResearchAndDevelopment.GetExperimentSubject(exp, ExperimentSituations.SrfLanded, handler.vessel.mainBody, biome);
+			ScienceSubject sub = ResearchAndDevelopment.GetExperimentSubject(exp, ExperimentSituations.SrfLanded, handler.vessel.mainBody, biome, "");
 			sub.title = exp.experimentTitle + situationCleanup(handler.vessel.mainBody, ExperimentSituations.SrfLanded, biome);
 
 			sub.science = handler.submittedData * sub.subjectValue;
@@ -282,7 +288,7 @@ namespace SEPScience
 
 				string biome = currentBiome(exp, handler.vessel);
 
-				subject = ResearchAndDevelopment.GetExperimentSubject(exp, ExperimentSituations.SrfLanded, handler.vessel.mainBody, biome);
+				subject = ResearchAndDevelopment.GetExperimentSubject(exp, ExperimentSituations.SrfLanded, handler.vessel.mainBody, biome, "");
 				subject.title = exp.experimentTitle + situationCleanup(handler.vessel.mainBody, ExperimentSituations.SrfLanded, biome);
 
 				if (i == level)
@@ -521,17 +527,17 @@ namespace SEPScience
 				switch (expSit)
 				{
 					case ExperimentSituations.SrfLanded:
-						return " from  " + body.theName + "'s surface";
+						return " from  " + body.displayName.LocalizeBodyName() + "'s surface";
 					case ExperimentSituations.SrfSplashed:
-						return " from " + body.theName + "'s oceans";
+						return " from " + body.displayName.LocalizeBodyName() + "'s oceans";
 					case ExperimentSituations.FlyingLow:
-						return " while flying at " + body.theName;
+						return " while flying at " + body.displayName.LocalizeBodyName();
 					case ExperimentSituations.FlyingHigh:
-						return " from " + body.theName + "'s upper atmosphere";
+						return " from " + body.displayName.LocalizeBodyName() + "'s upper atmosphere";
 					case ExperimentSituations.InSpaceLow:
-						return " while in space near " + body.theName;
+						return " while in space near " + body.displayName.LocalizeBodyName();
 					default:
-						return " while in space high over " + body.theName;
+						return " while in space high over " + body.displayName.LocalizeBodyName();
 				}
 			}
 			else
@@ -539,17 +545,17 @@ namespace SEPScience
 				switch (expSit)
 				{
 					case ExperimentSituations.SrfLanded:
-						return " from " + body.theName + "'s " + b;
+						return " from " + body.displayName.LocalizeBodyName() + "'s " + b;
 					case ExperimentSituations.SrfSplashed:
-						return " from " + body.theName + "'s " + b;
+						return " from " + body.displayName.LocalizeBodyName() + "'s " + b;
 					case ExperimentSituations.FlyingLow:
-						return " while flying over " + body.theName + "'s " + b;
+						return " while flying over " + body.displayName.LocalizeBodyName() + "'s " + b;
 					case ExperimentSituations.FlyingHigh:
-						return " from the upper atmosphere over " + body.theName + "'s " + b;
+						return " from the upper atmosphere over " + body.displayName.LocalizeBodyName() + "'s " + b;
 					case ExperimentSituations.InSpaceLow:
-						return " from space just above " + body.theName + "'s " + b;
+						return " from space just above " + body.displayName.LocalizeBodyName() + "'s " + b;
 					default:
-						return " while in space high over " + body.theName + "'s " + b;
+						return " while in space high over " + body.displayName.LocalizeBodyName() + "'s " + b;
 				}
 			}
 		}
