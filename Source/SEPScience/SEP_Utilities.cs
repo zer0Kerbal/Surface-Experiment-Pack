@@ -224,6 +224,23 @@ namespace SEPScience
 			return Vessel.GetLandedAtString(v.landedAt);
 		}
 
+		private static string currentDisplayBiome(ScienceExperiment e, Vessel v)
+		{
+			if (e == null)
+				return "";
+
+			if (v == null)
+				return "";
+
+			if (!e.BiomeIsRelevantWhile(ExperimentSituations.SrfLanded))
+				return "";
+
+			if (string.IsNullOrEmpty(v.displaylandedAt))
+				return Localizer.Format(ScienceUtil.GetExperimentBiomeLocalized(v.mainBody, v.latitude, v.longitude));
+
+			return Localizer.Format(v.displaylandedAt);
+		}
+
 		public static ScienceSubject subjectIsValid(SEP_ExperimentHandler handler)
 		{
 			ScienceSubject subject = null;
@@ -261,10 +278,10 @@ namespace SEPScience
 			ScienceData data = null;
 
 			string biome = currentBiome(exp, handler.vessel);
+			string displayBiome = currentDisplayBiome(exp, handler.vessel);
 
-			ScienceSubject sub = ResearchAndDevelopment.GetExperimentSubject(exp, ExperimentSituations.SrfLanded, handler.vessel.mainBody, biome, "");
-			sub.title = exp.experimentTitle + situationCleanup(handler.vessel.mainBody, ExperimentSituations.SrfLanded, biome);
-
+			ScienceSubject sub = ResearchAndDevelopment.GetExperimentSubject(exp, ExperimentSituations.SrfLanded, handler.vessel.mainBody, biome, displayBiome);
+			
 			sub.science = handler.submittedData * sub.subjectValue;
 			sub.scientificValue = 1 - (sub.science / sub.scienceCap);
 
@@ -287,10 +304,10 @@ namespace SEPScience
 					continue;
 
 				string biome = currentBiome(exp, handler.vessel);
+				string displayBiome = currentDisplayBiome(exp, handler.vessel);
 
-				subject = ResearchAndDevelopment.GetExperimentSubject(exp, ExperimentSituations.SrfLanded, handler.vessel.mainBody, biome, "");
-				subject.title = exp.experimentTitle + situationCleanup(handler.vessel.mainBody, ExperimentSituations.SrfLanded, biome);
-
+				subject = ResearchAndDevelopment.GetExperimentSubject(exp, ExperimentSituations.SrfLanded, handler.vessel.mainBody, biome, displayBiome);
+				
 				if (i == level)
 					subject.science = submitted * subject.subjectValue;
 				else
@@ -518,46 +535,6 @@ namespace SEPScience
 				return "";
 
 			return sub.Substring(AtIndex + 1, SitIndex - AtIndex - 1);
-		}
-
-		public static string situationCleanup(CelestialBody body, ExperimentSituations expSit, string b)
-		{
-			if (b == "")
-			{
-				switch (expSit)
-				{
-					case ExperimentSituations.SrfLanded:
-						return " from  " + body.displayName.LocalizeBodyName() + "'s surface";
-					case ExperimentSituations.SrfSplashed:
-						return " from " + body.displayName.LocalizeBodyName() + "'s oceans";
-					case ExperimentSituations.FlyingLow:
-						return " while flying at " + body.displayName.LocalizeBodyName();
-					case ExperimentSituations.FlyingHigh:
-						return " from " + body.displayName.LocalizeBodyName() + "'s upper atmosphere";
-					case ExperimentSituations.InSpaceLow:
-						return " while in space near " + body.displayName.LocalizeBodyName();
-					default:
-						return " while in space high over " + body.displayName.LocalizeBodyName();
-				}
-			}
-			else
-			{
-				switch (expSit)
-				{
-					case ExperimentSituations.SrfLanded:
-						return " from " + body.displayName.LocalizeBodyName() + "'s " + b;
-					case ExperimentSituations.SrfSplashed:
-						return " from " + body.displayName.LocalizeBodyName() + "'s " + b;
-					case ExperimentSituations.FlyingLow:
-						return " while flying over " + body.displayName.LocalizeBodyName() + "'s " + b;
-					case ExperimentSituations.FlyingHigh:
-						return " from the upper atmosphere over " + body.displayName.LocalizeBodyName() + "'s " + b;
-					case ExperimentSituations.InSpaceLow:
-						return " from space just above " + body.displayName.LocalizeBodyName() + "'s " + b;
-					default:
-						return " while in space high over " + body.displayName.LocalizeBodyName() + "'s " + b;
-				}
-			}
 		}
 
 		public static float getTotalVesselEC(Vessel v)
