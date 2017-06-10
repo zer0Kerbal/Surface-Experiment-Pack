@@ -35,6 +35,7 @@ using System.Collections.Generic;
 using System.Linq;
 using SEPScience.Unity.Interfaces;
 using UnityEngine;
+using KSP.Localization;
 
 namespace SEPScience.SEP_UI.Windows
 {
@@ -115,20 +116,20 @@ namespace SEPScience.SEP_UI.Windows
 
 		private string getExpCountString()
 		{
-			return string.Format("{0} Experiments", experiments.Count);
+			return Localizer.Format("#LOC_SurfaceExperimentPack_UI_ExperimentCount", experiments.Count);
 		}
 
 		private string getECString()
 		{
 			if (vessel.loaded)
-				return string.Format("{0:N0} / {1:N0} EC", currentVesselEC, maxVesselEC);
+				return Localizer.Format("#LOC_SurfaceExperimentPack_UI_ECCount", currentVesselEC.ToString("N0"), maxVesselEC.ToString("N0"));
 			else
 				return "";
 		}
 
 		private string getSituationString()
 		{
-			return string.Format("{0} - {1}", vessel.mainBody.bodyName, ScienceUtil.GetExperimentBiome(vessel.mainBody, vessel.latitude, vessel.longitude));
+			return string.Format("{0} - {1}", vessel.mainBody.displayName.LocalizeBodyName(), ScienceUtil.GetExperimentBiome(vessel.mainBody, vessel.latitude, vessel.longitude));
 		}
 
 		private bool getConnectionStatus()

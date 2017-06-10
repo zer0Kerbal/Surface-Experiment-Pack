@@ -32,6 +32,7 @@ either expressed or implied, of the FreeBSD Project.
 
 using SEPScience.Unity.Interfaces;
 using UnityEngine;
+using KSP.Localization;
 
 namespace SEPScience.SEP_UI.Windows
 {
@@ -160,12 +161,12 @@ namespace SEPScience.SEP_UI.Windows
 		private string getDaysRemaining()
 		{
 			if (handler == null)
-				return "Error...";
+				return Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_statusError");
 
 			float next = getNextCompletion(handler.completion);
 
 			if (handler.completion >= next)
-				return "Complete";
+				return Localizer.Format("#LOC_SurfaceExperimentPack_UI_Complete");
 
 			if (handler.calibration <= 0)
 				return "∞";
