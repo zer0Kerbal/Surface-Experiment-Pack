@@ -40,17 +40,17 @@ namespace SEPScience
 	public class SEP_GameParameters : GameParameters.CustomParameterNode
 	{
 
-		[GameParameters.CustomParameterUI("Display All Vessels", toolTip = "The window will display all vessels in the same list, rather than separating them by celestial body", autoPersistance = true)]
+		[GameParameters.CustomParameterUI("#LOC_SurfaceExperimentPack_Settings_ShowAll", toolTip = "#LOC_SurfaceExperimentPack_SettingsTooltip_ShowAll", autoPersistance = true)]
 		public bool showAllVessels;
-		[GameParameters.CustomParameterUI("Window Fade Out", toolTip = "This controls whether the window fades out when not in focus", autoPersistance = true)]
+		[GameParameters.CustomParameterUI("#LOC_SurfaceExperimentPack_Settings_FadeOut", toolTip = "#LOC_SurfaceExperimentPack_SettingsTooltip_FadeOut", autoPersistance = true)]
 		public bool fadeOut = true;
-		[GameParameters.CustomFloatParameterUI("Scale", asPercentage = true, minValue = 0.5f, maxValue = 2, displayFormat = "N2", autoPersistance = true)]
+		[GameParameters.CustomFloatParameterUI("#LOC_SurfaceExperimentPack_Settings_Scale", asPercentage = true, minValue = 0.5f, maxValue = 2, displayFormat = "N2", autoPersistance = true)]
 		public float scale = 1;
-		[GameParameters.CustomParameterUI("Stock Toolbar", autoPersistance = true)]
+		[GameParameters.CustomParameterUI("#LOC_SurfaceExperimentPack_Settings_StockToolbar", autoPersistance = true)]
 		public bool stockToolbar = true;
-		[GameParameters.CustomParameterUI("Open on Hover", toolTip = "Open the window when hovering over the toolbar button", autoPersistance = true)]
+		[GameParameters.CustomParameterUI("#LOC_SurfaceExperimentPack_Settings_OpenHover", toolTip = "#LOC_SurfaceExperimentPack_SettingsTooltip_OpenHover", autoPersistance = true)]
 		public bool hoverOpen = true;
-		[GameParameters.CustomParameterUI("Use As Default", autoPersistance = false)]
+		[GameParameters.CustomParameterUI("#LOC_SurfaceExperimentPack_Settings_Default", toolTip = "#LOC_SurfaceExperimentPack_SettingsTooltip_Default", autoPersistance = false)]
 		public bool useAsDefault;
 
 		public SEP_GameParameters()
