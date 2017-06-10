@@ -75,7 +75,12 @@ namespace SEPScience
 			GameEvents.OnGameSettingsApplied.Add(SettingsApplied);
 
 			if (Load())
-				SEP_Utilities.log("[SEP Science] Settings file loaded", logLevels.log);
+				SEP_Utilities.log("Settings file loaded", logLevels.log);
+			else
+			{
+				if (Save())
+					SEP_Utilities.log("New Settings file generated at:\n{0}", logLevels.log, fullPath);
+			}
 		}
 
 		public void SettingsApplied()
@@ -95,7 +100,7 @@ namespace SEPScience
 				scale = settings.scale;
 
 				if (Save())
-					SEP_Utilities.log("[SEP Science] Settings file saved", logLevels.log);
+					SEP_Utilities.log("Settings file saved", logLevels.log);
 			}
 		}
 
@@ -114,13 +119,13 @@ namespace SEPScience
 				}
 				else
 				{
-					SEP_Utilities.log("[SEP Science] Settings file could not be found [{0}]", logLevels.warning, fullPath);
+					SEP_Utilities.log("Settings file could not be found [{0}]", logLevels.warning, fullPath);
 					b = false;
 				}
 			}
 			catch (Exception e)
 			{
-				SEP_Utilities.log("[SEP Science] Error while loading settings file from [{0}]\n{1}", logLevels.error, fullPath, e);
+				SEP_Utilities.log("Error while loading settings file from [{0}]\n{1}", logLevels.error, fullPath, e);
 				b = false;
 			}
 
@@ -141,7 +146,7 @@ namespace SEPScience
 			}
 			catch (Exception e)
 			{
-					SEP_Utilities.log("[SEP Science] Error while saving settings file from [{0}]\n{1}", logLevels.error, fullPath, e);
+					SEP_Utilities.log("Error while saving settings file from [{0}]\n{1}", logLevels.error, fullPath, e);
 				b = false;
 			}
 
@@ -159,7 +164,7 @@ namespace SEPScience
 			}
 			catch (Exception e)
 			{
-					SEP_Utilities.log("[SEP Science] Failed to generate settings file node...\n{0}", logLevels.error, e);
+					SEP_Utilities.log("Failed to generate settings file node...\n{0}", logLevels.error, e);
 				return new ConfigNode(GetType().Name);
 			}
 		}

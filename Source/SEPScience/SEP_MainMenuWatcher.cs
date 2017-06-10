@@ -30,6 +30,7 @@ either expressed or implied, of the FreeBSD Project.
 */
 #endregion
 
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
@@ -42,7 +43,6 @@ namespace SEPScience
 	public class SEP_MainMenuWatcher : MonoBehaviour
 	{
 		private MainMenu menu;
-		private Callback newGameTap;
 
 		private void Start()
 		{
@@ -51,15 +51,11 @@ namespace SEPScience
 			if (menu == null)
 				return;
 
-			newGameTap = menu.newGameBtn.onTap;
-
-			menu.newGameBtn.onTap = new Callback(onTap);
+			menu.newGameBtn.onTap = (Callback)Delegate.Combine(menu.newGameBtn.onTap, new Callback(onTap));
 		}
 
 		private void onTap()
 		{
-			newGameTap.Invoke();
-
 			StartCoroutine(AddListener());
 		}
 
@@ -69,20 +65,9 @@ namespace SEPScience
 
 			var buttons = GameObject.FindObjectsOfType<Button>();
 
-			for (int i = buttons.Length - 1; i >= 0; i--)
+			if (buttons.Length > 0)
 			{
-				Button button = buttons[i];
-
-				if (button == null)
-					continue;
-
-				TextMeshProUGUI tmp = button.GetComponentInChildren<TextMeshProUGUI>();
-
-				if (tmp == null)
-					continue;
-
-				if (tmp.text != "Start!")
-					continue;
+				var button = buttons[buttons.Length - 1];
 
 				button.onClick.AddListener(new UnityAction(onSettingsApply));
 			}
