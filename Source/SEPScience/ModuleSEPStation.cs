@@ -38,6 +38,7 @@ using System.Reflection;
 using SEPScience.SEP_UI.Windows;
 using UnityEngine;
 using Experience.Effects;
+using KSP.Localization;
 
 namespace SEPScience
 {
@@ -188,11 +189,11 @@ namespace SEPScience
 			Events["RetractEvent"].guiName = retractEventName;
 			Events["RetractEvent"].unfocusedRange = interactionRange;
 			Events["toggleAutoTransmit"].active = SEP_Controller.Instance.TransmissionUpdgrade;
-			Events["toggleAutoTransmit"].guiName = autoTransmit ? "Turn Auto Transmit Off" : "Turn Auto Transmit On";
+			Events["toggleAutoTransmit"].guiName = autoTransmit ? Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPStation_autoTransmitOff") : Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPStation_autoTransmitOn");
 			Events["toggleAutoTransmit"].unfocusedRange = interactionRange;
-			Events["CollectEvent"].guiName = "Collect Data";
+			Events["CollectEvent"].guiName = Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPStation_collectData");
 			Events["CollectEvent"].unfocusedRange = interactionRange;
-			Events["ReviewEvent"].guiName = "Review Data";
+			Events["ReviewEvent"].guiName = Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPStation_reviewData");
 			Events["ReviewEvent"].unfocusedRange = interactionRange;
 		}
 
@@ -200,7 +201,7 @@ namespace SEPScience
 		{
 			string s = base.GetInfo();
 
-			s += string.Format("Max Experiments: {0}\n", maxExperiments);
+			s += Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPStation_infoMax", maxExperiments);
 
 			return s;
 		}
@@ -449,9 +450,9 @@ namespace SEPScience
 				string val = "";
 
 				if (exp.experimentRunning)
-					val = string.Format("Completion: {0:P0}", exp.Handler.completion);
+					val = Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPStation_completion", exp.Handler.completion.ToString("P0"));
 				else
-					val = string.Format("Calibration: {0:P0}", exp.Handler.calibration);
+					val = Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPStation_calibration", exp.Handler.calibration.ToString("P0"));
 
 				switch(i)
 				{
@@ -609,7 +610,7 @@ namespace SEPScience
 
 			if (!FlightGlobals.ActiveVessel.isEVA)
 			{
-				ScreenMessages.PostScreenMessage("Must be on EVA to activate this experiment", 5f, ScreenMessageStyle.UPPER_CENTER);
+				ScreenMessages.PostScreenMessage(Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_EVAWarning"), 5f, ScreenMessageStyle.UPPER_CENTER);
 				return;
 			}
 
@@ -638,7 +639,7 @@ namespace SEPScience
 			if (section != null)
 				section.setAutoTransmit(autoTransmit);
 
-			Events["toggleAutoTransmit"].guiName = autoTransmit ? "Turn Auto Transmit Off" : "Turn Auto Transmit On";
+			Events["toggleAutoTransmit"].guiName = autoTransmit ? Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPStation_autoTransmitOff") : Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPStation_autoTransmitOn");
 		}
 
 		#region IContractObjectiveModule
