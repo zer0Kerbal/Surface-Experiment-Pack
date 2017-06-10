@@ -39,6 +39,7 @@ using FinePrint.Utilities;
 using UnityEngine;
 using KSP.UI.Screens.Flight.Dialogs;
 using Experience.Effects;
+using KSP.Localization;
 
 namespace SEPScience
 {
@@ -208,7 +209,7 @@ namespace SEPScience
 			Events["PauseExperiment"].guiName = stopExperimentName;
 			Events["PauseExperiment"].unfocusedRange = interactionRange;
 			Events["ReCalibrate"].active = IsDeployed;
-			Events["ReCalibrate"].guiName = "Re-Calibrate";
+			Events["ReCalibrate"].guiName = Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_recalibrate");
 			Events["ReCalibrate"].unfocusedRange = interactionRange;
 			Events["CalibrateEvent"].active = !IsDeployed;
 			Events["CalibrateEvent"].guiName = calibrationEventName;
@@ -224,12 +225,12 @@ namespace SEPScience
 			calibrationLevel = calibration.ToString("P0");
 			dataCollected = completion.ToString("P0");
 
-			Fields["status"].guiName = "Status";
-			Fields["calibrationLevel"].guiName = "Calibration Level";
+			Fields["status"].guiName = Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_status");
+			Fields["calibrationLevel"].guiName = Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_calibrationLevel");
 			Fields["calibrationLevel"].guiActive = IsDeployed;
 			Fields["dataCollected"].guiActive = experimentRunning;
-			Fields["dataCollected"].guiName = "Data Collected";
-			Fields["daysRemaining"].guiName = "Time Remaining";
+			Fields["dataCollected"].guiName = Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_dataCollected");
+			Fields["daysRemaining"].guiName = Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_daysRemaining");
 			Fields["daysRemaining"].guiActive = experimentRunning;
 		}
 
@@ -322,20 +323,20 @@ namespace SEPScience
 			string s = base.GetInfo();
 
 			s += string.Format("<color={0}>{1}</color>\n", XKCDColors.HexFormat.Cyan, experimentActionName);
-			s += string.Format("Can Transmit: {0}\n", RUIutils.GetYesNoUIString(canTransmit));
+			s += Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_infoTransmit", RUIutils.GetYesNoUIString(canTransmit));
 
 			if (canTransmit)
-				s += string.Format("Transmission: {0:P0}\n", xmitDataScalar);
+				s += Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_infoTransmission", xmitDataScalar.ToString("P0"));
 
 			if (excludeAtmosphere)
-				s += string.Format("Exclude Atmosphere: {0}\n", RUIutils.GetYesNoUIString(true));
+				s += Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_infoAtmosphere", RUIutils.GetYesNoUIString(true));
 
-			s += string.Format("Experiment Complexity: {0}\n", complexity);
+			s += Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_infoComplexity", complexity);
 
-			s += string.Format("Std. Time To Completion: {0:N0} Days\n", getDays(experimentTime));
+			s += Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_infoCompletion", getDays(experimentTime).ToString("N0"));
 
 			if (animated && oneShotAnim)
-				s += string.Format("One Shot: {0}", RUIutils.GetYesNoUIString(true));
+				s += Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_infoOneShot", RUIutils.GetYesNoUIString(true));
 
 			s += resHandler.PrintModuleResources(1);
 
@@ -446,6 +447,10 @@ namespace SEPScience
 					continue;
 
 				hasContainer = container.canBeTransferredToInVessel;
+
+				if (!hasContainer)
+					continue;
+
 				break;
 			}
 		}
@@ -453,27 +458,27 @@ namespace SEPScience
 		private string statusString()
 		{
 			if (animated && anim != null && anim[animationName] != null && anim.IsPlaying(animationName))
-				return "Moving...";
+				return Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_statusMoving");
 
 			if (handler == null)
-				return "Error...";
+				return Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_statusError");
 
 			if (handler.GetScienceCount() >= 1)
-				return "Data Ready";
+				return Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_statusDataReady");
 
 			if (!IsDeployed)
-				return "Inactive";
+				return Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_statusInactive");
 
 			if (!handler.experimentRunning)
-				return "Calibrated";
+				return Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_statusCalibrated");
 
-			return "Collecting Data";
+			return Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_statusCollecting");
 		}
 
 		private string getTimeRemaining()
 		{
 			if (handler == null)
-				return "Error...";
+				return Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_statusError");
 
 			float next = getNextCompletion(handler.completion);
 
@@ -641,7 +646,7 @@ namespace SEPScience
 
 			if (!FlightGlobals.ActiveVessel.isEVA)
 			{
-				ScreenMessages.PostScreenMessage("Must be on EVA to activate this experiment", 5f, ScreenMessageStyle.UPPER_CENTER);
+				ScreenMessages.PostScreenMessage(Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_EVAWarning"), 5f, ScreenMessageStyle.UPPER_CENTER);
 				return;
 			}
 
@@ -701,7 +706,7 @@ namespace SEPScience
 
 			if (!FlightGlobals.ActiveVessel.isEVA)
 			{
-				ScreenMessages.PostScreenMessage("Must be on EVA to activate this experiment", 5f, ScreenMessageStyle.UPPER_CENTER);
+				ScreenMessages.PostScreenMessage(Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_EVAWarning"), 5f, ScreenMessageStyle.UPPER_CENTER);
 				return;
 			}
 
@@ -890,13 +895,13 @@ namespace SEPScience
 		{
 			if (!hasContainer)
 			{
-				ScreenMessages.PostScreenMessage(string.Format("<color=orange>[{0}]: No data container on-board, canceling transfer.<color>", part.partInfo.title), 6, ScreenMessageStyle.UPPER_CENTER);
+				ScreenMessages.PostScreenMessage(Localizer.Format("#autoLOC_237432", part.partInfo.title, vessel.vesselName), 6, ScreenMessageStyle.UPPER_CENTER);
 				return;
 			}
 
 			if (PartItemTransfer.Instance != null)
 			{
-				ScreenMessages.PostScreenMessage("<b><color=orange>A transfer is already in progress.</color></b>", 3f, ScreenMessageStyle.UPPER_CENTER);
+				ScreenMessages.PostScreenMessage(Localizer.Format("#autoLOC_238816"), 3f, ScreenMessageStyle.UPPER_CENTER);
 				return;
 			}
 
@@ -916,15 +921,15 @@ namespace SEPScience
 
 			if (handler.GetScienceCount() <= 0)
 			{
-				ScreenMessages.PostScreenMessage(string.Format("[{0}]: has no data to transfer.", part.partInfo.title), 6, ScreenMessageStyle.UPPER_CENTER);
+				ScreenMessages.PostScreenMessage(Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_noData", part.partInfo.title), 6, ScreenMessageStyle.UPPER_CENTER);
 				return;
 			}
-
+			
 			ModuleScienceContainer container = p.FindModuleImplementing<ModuleScienceContainer>();
 
 			if (container == null)
 			{
-				ScreenMessages.PostScreenMessage(string.Format("<color=orange>[{0}]: {1} has no data container, canceling transfer.<color>", part.partInfo.title, p.partInfo.title), 6, ScreenMessageStyle.UPPER_CENTER);
+				ScreenMessages.PostScreenMessage(Localizer.Format("#autoLOC_237432", part.partInfo.title, p.partInfo.title), 6, ScreenMessageStyle.UPPER_CENTER);
 				return;
 			}
 
@@ -939,9 +944,9 @@ namespace SEPScience
 			int i = handler.GetScienceCount();
 
 			if (target.StoreData(new List<IScienceDataContainer> { this }, false))
-				ScreenMessages.PostScreenMessage(string.Format("[{0}]: {1} Data stored.", target.part.partInfo.title, i), 6, ScreenMessageStyle.UPPER_LEFT);
+				ScreenMessages.PostScreenMessage(Localizer.Format("#autoLOC_237418", target.part.partInfo.title), 6, ScreenMessageStyle.UPPER_LEFT);
 			else
-				ScreenMessages.PostScreenMessage(string.Format("<color=orange>[{0}]: Not all data was stored.</color>", target.part.partInfo.title), 6, ScreenMessageStyle.UPPER_LEFT);
+				ScreenMessages.PostScreenMessage(Localizer.Format("#autoLOC_237422", target.part.partInfo.title), 6, ScreenMessageStyle.UPPER_LEFT);
 		}
 
 		//private void sitChange(GameEvents.HostedFromToAction<Vessel, Vessel.Situations> FT)
@@ -1037,19 +1042,19 @@ namespace SEPScience
 			if (handler == null)
 			{
 				SEP_Utilities.log("SEP Experiment Handler is null; Stopping any experiments...", logLevels.warning);
-				failMessage = "Whoops, something went wrong with this SEP Experiment";
+				failMessage = Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_failExperimentError");
 				return false;
 			}
 
 			if (handler.basicExperiment == null)
 			{
 				SEP_Utilities.log("SEP Experiment definition is null; stopping experiment\npossible errors or corruption present in the SEP ScienceDefs file", logLevels.warning);
-				failMessage = "Experiment error; check log files";
+				failMessage = Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_failExperimentError");
 				return false;
 			}
 			if (Inoperable)
 			{
-				failMessage = "Experiment is no longer functional";
+				failMessage = Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_failFunctional");
 				return false;
 			}
 			else if (handler.basicExperiment.requireAtmosphere && !vessel.mainBody.atmosphere)
@@ -1140,9 +1145,9 @@ namespace SEPScience
 				DumpData(data);
 			}
 			else if (CommNet.CommNetScenario.CommNetEnabled)
-				ScreenMessages.PostScreenMessage("No usable, in-range Comms Devices on this vessel. Cannot Transmit Data.", 3f, ScreenMessageStyle.UPPER_CENTER);
+				ScreenMessages.PostScreenMessage(Localizer.Format("#autoLOC_237738"), 3f, ScreenMessageStyle.UPPER_CENTER);
 			else
-				ScreenMessages.PostScreenMessage("No Comms Devices on this vessel. Cannot Transmit Data.", 3f, ScreenMessageStyle.UPPER_CENTER);
+				ScreenMessages.PostScreenMessage(Localizer.Format("#autoLOC_237740"), 3f, ScreenMessageStyle.UPPER_CENTER);
 		}
 
 		private void onSendToLab(ScienceData data)
