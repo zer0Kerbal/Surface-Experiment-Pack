@@ -47,7 +47,7 @@ namespace SEPScience
 		[KSPField]
 		public int maxExperiments = 8;
 		[KSPField]
-		public string conductExperimentsEventName = Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPStation_conductExperimentsEventName"); // "Begin All Experiments";
+		public string conductExperimentsEventName = "#LOC_SurfaceExperimentPack_ModuleSEPStation_conductExperimentsEventName"; // "Begin All Experiments";
 		//[KSPField]
 		//public string transmitUnlockTech = "";
 		[KSPField]
@@ -61,9 +61,9 @@ namespace SEPScience
 		[KSPField]
 		public float animSpeed = 1;
 		[KSPField]
-		public string deployEventName = Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPStation_deployEventName"); // "Deploy";
+		public string deployEventName = "#LOC_SurfaceExperimentPack_ModuleSEPStation_deployEventName"; // "Deploy";
 		[KSPField]
-		public string retractEventName = Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPStation_retractEventName"); // "Retract";
+		public string retractEventName = "#LOC_SurfaceExperimentPack_ModuleSEPStation_retractEventName"; // "Retract";
 		[KSPField(isPersistant = true)]
 		public bool autoTransmit;
 		

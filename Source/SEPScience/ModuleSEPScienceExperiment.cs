@@ -48,7 +48,7 @@ namespace SEPScience
 		[KSPField]
 		public string transmitWarningText;
 		[KSPField]
-		public string situationFailMessage = Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_situationFailMessage"); // "Can't conduct experiment here";
+		public string situationFailMessage = "#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_situationFailMessage"; // "Can't conduct experiment here";
 		[KSPField]
 		public string collectWarningText;
 		[KSPField]
@@ -56,9 +56,9 @@ namespace SEPScience
 		[KSPField]
 		public bool excludeAtmosphere;
 		[KSPField]
-		public string excludeAtmosphereMessage = Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_excludeAtmosphereMessage"); // "This experiment can't be conducted within an atmosphere";
+		public string excludeAtmosphereMessage = "#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_excludeAtmosphereMessage"; // "This experiment can't be conducted within an atmosphere";
 		[KSPField]
-		public string includeAtmosphereMessage = Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_includeAtmosphereMessage"); // "This experiment can only be conducted within an atmosphere";
+		public string includeAtmosphereMessage = "#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_includeAtmosphereMessage"; // "This experiment can only be conducted within an atmosphere";
 		[KSPField]
 		public float interactionRange = 1.5f;
 		[KSPField(isPersistant = true)]
@@ -66,29 +66,29 @@ namespace SEPScience
 		[KSPField(isPersistant = true)]
 		public bool Inoperable;
 		[KSPField]
-		public string experimentActionName = Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_experimentActionName"); // "Deploy Experiment";
+		public string experimentActionName = "#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_experimentActionName"; // "Deploy Experiment";
 		[KSPField]
-		public string stopExperimentName = Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_stopExperimentName"); // "Pause Experiment";
+		public string stopExperimentName = "#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_stopExperimentName"; // "Pause Experiment";
 		[KSPField]
-		public string collectActionName = Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_collectActionName"); // "Collect Data";
+		public string collectActionName = "#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_collectActionName"; // "Collect Data";
 		[KSPField]
-		public string reviewActionName = Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_reviewActionName"); // "Review Data";
+		public string reviewActionName = "#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_reviewActionName"; // "Review Data";
 		[KSPField]
 		public string requiredModules;
 		[KSPField]
 		public string requiredParts;
 		[KSPField]
-		public string requiredPartsMessage = Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_requiredPartsMessage"); // "Required parts are not present on this vessel";
+		public string requiredPartsMessage = "#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_requiredPartsMessage"; // "Required parts are not present on this vessel";
 		[KSPField]
-		public string requiredModulesMessage = Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_requiredModulesMessage"); // "Required part modules are not present on this vessel";
+		public string requiredModulesMessage = "#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_requiredModulesMessage"; // "Required part modules are not present on this vessel";
 		[KSPField]
 		public string controllerModule = "ModuleSEPStation";
 		[KSPField]
-		public string controllerModuleMessage = Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_controllerModuleMessage"); // "Controller module is not connected to the experiment";
+		public string controllerModuleMessage = "#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_controllerModuleMessage"; // "Controller module is not connected to the experiment";
 		[KSPField]
-		public string calibrationEventName = Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_calibrationEventName"); // "Calibrate";
+		public string calibrationEventName = "#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_calibrationEventName"; // "Calibrate";
 		[KSPField]
-		public string retractEventName = Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_retractEventName"); // "Shut Down";
+		public string retractEventName = "#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_retractEventName"; // "Shut Down";
 		[KSPField]
 		public bool animated;
 		[KSPField]
@@ -132,7 +132,7 @@ namespace SEPScience
 
 		//Right click menu status fields
 		[KSPField(guiActive = true)]
-		public string status = Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_statusInactive"); // "Inactive";
+		public string status = "#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_statusInactive"; // "Inactive";
 		[KSPField]
 		public string calibrationLevel = "0%";
 		[KSPField]
