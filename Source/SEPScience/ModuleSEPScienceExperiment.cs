@@ -921,7 +921,7 @@ namespace SEPScience
 
 			if (handler.GetScienceCount() <= 0)
 			{
-				ScreenMessages.PostScreenMessage(Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_noData", part.partInfo.title), 6, ScreenMessageStyle.UPPER_CENTER);
+				ScreenMessages.PostScreenMessage(Localizer.Format("#autoLOC_238567", part.partInfo.title), 6, ScreenMessageStyle.UPPER_CENTER);
 				return;
 			}
 			
