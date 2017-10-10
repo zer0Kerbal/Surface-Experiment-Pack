@@ -257,16 +257,19 @@ namespace SEPScience
 			if (FlightDriver.Pause)
 				return;
 
-			int l = Fields.Count;
-
-			for (int i = 0; i < l; i++)
+			if (!window.Pinned && !InputLockManager.IsAllLocked(ControlTypes.All))
 			{
-				BaseField b = Fields[i];
+				int l = Fields.Count;
 
-				if (!b.guiActive)
-					continue;
+				for (int i = 0; i < l; i++)
+				{
+					BaseField b = Fields[i];
 
-				window.AddFieldControl(b, part, this);
+					if (!b.guiActive)
+						continue;
+
+					window.AddFieldControl(b, part, this);
+				}
 			}
 
 			var items = window.ListItems;
