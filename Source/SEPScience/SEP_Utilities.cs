@@ -118,8 +118,8 @@ namespace SEPScience
 					if (!mod.IsValidContractObjective("Antenna"))
 						continue;
 
-					//log("Antenna Part Found: {0} - Module: {1}", logLevels.log, part.title, mod.moduleName);
-
+                    //log("Logging Antenna Module: {0}", logLevels.log, part.title);
+                    
 					AntennaModules.Add(mod);
 
 					if (!AntennaParts.Contains(part.name))

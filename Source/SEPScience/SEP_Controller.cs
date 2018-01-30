@@ -30,7 +30,6 @@ either expressed or implied, of the FreeBSD Project.
 */
 #endregion
 
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -75,12 +74,23 @@ namespace SEPScience
 			get { return usingCommNet; }
 		}
 
-		private void Start()
+        private void Awake()
+        {
+            if (instance != null && instance != this)
+            {
+                Destroy(gameObject);
+                return;
+            }
+
+            instance = this;
+        }
+
+        private void Start()
 		{
 			if (HighLogic.LoadedSceneIsEditor)
 			{
-				running = false;
 				Destroy(gameObject);
+                return;
 			}
 
 			if (!SEP_Utilities.partModulesLoaded)
@@ -96,17 +106,10 @@ namespace SEPScience
 				transmissionUpgrade = true;
 			else
 				transmissionUpgrade = false;
-
-			if (running)
-				Destroy(gameObject);
-
+            
 			if (HighLogic.LoadedSceneIsFlight)
 				StartCoroutine(attachWindowListener());
-
-			instance = this;
-
-			running = true;
-
+            
 			usingCommNet = HighLogic.CurrentGame.Parameters.Difficulty.EnableCommNet;
 
 			GameEvents.onLevelWasLoaded.Add(onReady);
@@ -115,7 +118,8 @@ namespace SEPScience
 
 		private void OnDestroy()
 		{
-			running = false;
+            if (instance == this)
+                instance = null;
 
 			GameEvents.onLevelWasLoaded.Remove(onReady);
 			GameEvents.OnGameSettingsApplied.Remove(onSettingsApplied);
@@ -152,9 +156,11 @@ namespace SEPScience
 
 			double nextUpdate = updateRate * timeWarpMultiplier;
 
-			if (Planetarium.GetUniversalTime() - lastUpdate > nextUpdate)
+            double UT = Planetarium.GetUniversalTime();
+
+            if (UT - lastUpdate > nextUpdate)
 			{
-				lastUpdate = Planetarium.GetUniversalTime();
+				lastUpdate = UT;
 
 				experimentCheck(lastUpdate);
 			}
@@ -196,7 +202,7 @@ namespace SEPScience
 
 			int timer = 0;
 
-			while (timer < 30)
+			while (timer < 60)
 			{
 				timer++;
 				yield return null;
@@ -228,47 +234,54 @@ namespace SEPScience
 
 				List<SEP_ExperimentHandler> handlers = new List<SEP_ExperimentHandler>();
 
-				if (v.loaded)
-				{
-					handlers =
-						(from mod in v.FindPartModulesImplementing<ModuleSEPScienceExperiment>()
-						where mod.Handler != null && mod.IsDeployed
-						select mod.Handler).ToList();
-				}
-				else
-				{
-					var snaps = v.protoVessel.protoPartSnapshots;
+                if (v.loaded)
+                {
+                    handlers =
+                        (from mod in v.FindPartModulesImplementing<ModuleSEPScienceExperiment>()
+                         where mod.Handler != null && mod.IsDeployed
+                         select mod.Handler).ToList();
 
-					int s = snaps.Count;
+                    if (handlers.Count > 0)
+                        SEP_Utilities.log("Processing loaded SEP vessel: {0}\n{1} SEP modules found", logLevels.log, v.vesselName, handlers.Count);
+                }
+                else
+                {
+                    var snaps = v.protoVessel.protoPartSnapshots;
 
-					for (int j = 0; j < s; j++)
-					{
-						ProtoPartSnapshot p = snaps[j];
+                    int s = snaps.Count;
 
-						if (!p.modules.Any(m => m.moduleName == "ModuleSEPScienceExperiment"))
-							continue;
+                    for (int j = 0; j < s; j++)
+                    {
+                        ProtoPartSnapshot p = snaps[j];
 
-						var mods = p.modules;
+                        if (!p.modules.Any(m => m.moduleName == "ModuleSEPScienceExperiment"))
+                            continue;
 
-						int d = mods.Count;
+                        var mods = p.modules;
 
-						for (int k = 0; k < d; k++)
-						{
-							ProtoPartModuleSnapshot mod = mods[k];
+                        int d = mods.Count;
 
-							if (mod.moduleName != "ModuleSEPScienceExperiment")
-								continue;
+                        for (int k = 0; k < d; k++)
+                        {
+                            ProtoPartModuleSnapshot mod = mods[k];
 
-							if (!mod.moduleValues.HasValue("IsDeployed") || mod.moduleValues.GetValue("IsDeployed") != "True")
-								continue;
+                            if (mod.moduleName != "ModuleSEPScienceExperiment")
+                                continue;
 
-							SEP_ExperimentHandler handler = new SEP_ExperimentHandler(mod, v);
+                            if (!mod.moduleValues.HasValue("IsDeployed") || mod.moduleValues.GetValue("IsDeployed") != "True")
+                                continue;
 
-							if (handler.loaded)
-								handlers.Add(handler);
-						}
-					}
-				}
+                            SEP_ExperimentHandler handler = new SEP_ExperimentHandler(mod, v);
+
+                            if (handler.loaded)
+                                handlers.Add(handler);
+                        }
+
+                    }
+
+                    if (handlers.Count > 0)
+                        SEP_Utilities.log("Processing unloaded SEP vessel: {0}\n{1} SEP modules found", logLevels.log, v.vesselName, handlers.Count);
+                }
 
 				if (handlers.Count > 0)
 				{
