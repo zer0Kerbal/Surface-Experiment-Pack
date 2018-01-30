@@ -204,9 +204,19 @@ namespace SEPScience.SEP_UI.Windows
 				{
 					var bodies = GetBodies;
 
-					if (GetBodies.Count > 0)
-						_currentBody = GetBodies[0];
+					if (bodies.Count > 0)
+						_currentBody = bodies[0];
 				}
+                else
+                {
+                    var bodies = GetBodies;
+
+                    if (!bodies.Contains(_currentBody))
+                    {
+                        if (bodies.Count > 0)
+                            _currentBody = bodies[0];
+                    }
+                }
 
 				return _currentBody;
 			}
@@ -275,11 +285,17 @@ namespace SEPScience.SEP_UI.Windows
 
 		private void Awake()
 		{
-			if (HighLogic.LoadedSceneIsEditor)
-				Destroy(gameObject);
+            if (HighLogic.LoadedSceneIsEditor)
+            {
+                Destroy(gameObject);
+                return;
+            }
 
-			if (instance != null)
-				Destroy(gameObject);
+            if (instance != null)
+            {
+                Destroy(gameObject);
+                return;
+            }
 
 			instance = this;
 
@@ -422,6 +438,12 @@ namespace SEPScience.SEP_UI.Windows
 
 			if (button != null)
 				button.Enable(false);
+
+            if (HighLogic.LoadedSceneIsFlight)
+            {
+                if (GetBodies.Contains(FlightGlobals.currentMainBody.bodyName))
+                    _currentBody = FlightGlobals.currentMainBody.bodyName;
+            }
 		}
 
 		private void processVesselSections()
