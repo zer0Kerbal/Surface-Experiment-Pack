@@ -49,7 +49,7 @@ namespace SEPScience
 		public float completion;
 		public float submittedData;
 		public double lastBackgroundCheck;
-		public int flightID;
+		public uint flightID;
 		public ModuleSEPScienceExperiment host;
 		public ProtoPartModuleSnapshot protoHost;
 		public Vessel vessel;
@@ -81,7 +81,7 @@ namespace SEPScience
 			lastBackgroundCheck = mod.lastBackgroundCheck;
 			controllerAutoTransmit = mod.controllerAutoTransmit;
 			usingECResource = mod.usingEC;
-			flightID = mod.flightID;
+			flightID = mod.part.flightID;
 			host = mod;
 			vessel = host.vessel;
 
@@ -122,8 +122,14 @@ namespace SEPScience
 			node.TryGetValue("submittedData", ref submittedData);
 			node.TryGetValue("lastBackgroundCheck", ref lastBackgroundCheck);
 			node.TryGetValue("usingEC", ref usingECResource);
-			node.TryGetValue("controllerAutoTransmit", ref controllerAutoTransmit);
-			node.TryGetValue("flightID", ref flightID);
+            node.TryGetValue("controllerAutoTransmit", ref controllerAutoTransmit);
+
+            if (node.HasValue("flightID"))
+            {
+                string id = node.GetValue("flightID");
+
+                uint.TryParse(id, out flightID);
+            }
 
 			protoHost = snap;
 			vessel = v;
@@ -182,7 +188,7 @@ namespace SEPScience
 
 				protoHost.moduleValues.TryGetValue("flightID", ref id);
 
-				if (id != flightID)
+				if (id != flightID || id == 0)
 					return;
 
 				//SEP_Utilities.log("Saving Handler from loaded vessel", logLevels.error);
@@ -208,7 +214,7 @@ namespace SEPScience
 
 				node.TryGetValue("flightID", ref id);
 
-				if (id != flightID)
+				if (id != flightID || id == 0)
 					return;
 
 				//if (vessel.mainBody.bodyName == "Kerbin")
@@ -223,7 +229,7 @@ namespace SEPScience
 				//		, currentGame == null ? -1000 : currentGame.UniversalTime);
 				//}
 
-				//SEP_Utilities.log("Saving Handler from proto vessel", logLevels.error);
+				//SEP_Utilities.log("Saving Handler from proto vessel: ID: {0}", logLevels.error, flightID);
 
 				node.SetValue("experimentRunning", experimentRunning.ToString());
 				node.SetValue("calibration", calibration.ToString());

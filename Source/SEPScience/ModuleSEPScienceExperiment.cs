@@ -126,7 +126,7 @@ namespace SEPScience
 		[KSPField(isPersistant = true)]
 		public double lastBackgroundCheck;
 		[KSPField(isPersistant = true)]
-		public int flightID;
+		public uint flightID;
 		[KSPField(isPersistant = true)]
 		public bool usingEC;
 
@@ -176,7 +176,7 @@ namespace SEPScience
 
 			usingEC = resHandler.inputResources.Count > 0;
 
-			flightID = (int)part.flightID;
+			flightID = part.flightID;
 
 			if (complexity > 4)
 				complexity = 4;
@@ -372,7 +372,9 @@ namespace SEPScience
 				yield return null;
 			}
 
-			if (SEP_Controller.Instance.VesselLoaded(vessel))
+            flightID = part.flightID;
+
+            if (SEP_Controller.Instance.VesselLoaded(vessel))
 			{
 				handler = SEP_Controller.Instance.getHandler(vessel, part.flightID);
 
@@ -624,7 +626,7 @@ namespace SEPScience
 			handler.vessel = vessel;
 			handler.submittedData = submittedData;
 			handler.experimentRunning = experimentRunning;
-			flightID = (int)part.flightID;
+			flightID = part.flightID;
 			handler.flightID = flightID;
 
 			if (forward)
@@ -695,42 +697,47 @@ namespace SEPScience
 			SEP_Utilities.onExperimentActivate.Fire(handler.vessel, handler);
 		}
 
-		[KSPEvent(guiActive = false, externalToEVAOnly = true, guiActiveUnfocused = true, active = false)]
-		public void ReCalibrate()
-		{
-			if (!IsDeployed)
-			{
-				Events["ReCalibrate"].active = false;
-				return;
-			}
+        [KSPEvent(guiActive = false, externalToEVAOnly = true, guiActiveUnfocused = true, active = false)]
+        public void ReCalibrate()
+        {
+            if (!IsDeployed)
+            {
+                Events["ReCalibrate"].active = false;
+                return;
+            }
 
-			if (FlightGlobals.ActiveVessel == null)
-				return;
+            if (FlightGlobals.ActiveVessel == null)
+                return;
 
-			if (!FlightGlobals.ActiveVessel.isEVA)
-			{
-				ScreenMessages.PostScreenMessage(Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_EVAWarning"), 5f, ScreenMessageStyle.UPPER_CENTER);
-				return;
-			}
+            if (!FlightGlobals.ActiveVessel.isEVA)
+            {
+                ScreenMessages.PostScreenMessage(Localizer.Format("#LOC_SurfaceExperimentPack_ModuleSEPScienceExperiment_EVAWarning"), 5f, ScreenMessageStyle.UPPER_CENTER);
+                return;
+            }
 
-			if (!canConduct())
-			{
-				ScreenMessages.PostScreenMessage(failMessage, 5f, ScreenMessageStyle.UPPER_CENTER);
-				return;
-			}
+            if (!canConduct())
+            {
+                ScreenMessages.PostScreenMessage(failMessage, 5f, ScreenMessageStyle.UPPER_CENTER);
+                return;
+            }
 
-			ProtoCrewMember crew = FlightGlobals.ActiveVessel.GetVesselCrew().FirstOrDefault();
+            ProtoCrewMember crew = FlightGlobals.ActiveVessel.GetVesselCrew().FirstOrDefault();
 
-			if (crew == null)
-				return;
+            if (crew == null)
+                return;
 
-			calibration = calculateCalibration(crew, complexity);
+            float cal = calculateCalibration(crew, complexity);
 
-			if (handler != null)
-				handler.calibration = calibration;
+            if (cal > calibration)
+            {
+                calibration = cal;
 
-			calibrationLevel = calibration.ToString("P0");
-		}
+                if (handler != null)
+                    handler.calibration = calibration;
+
+                calibrationLevel = calibration.ToString("P0");
+            }
+        }
 
 		[KSPEvent(guiActive = false, externalToEVAOnly = true, guiActiveUnfocused = true, active = false)]
 		public void RetractEvent()
