@@ -30,9 +30,6 @@ either expressed or implied, of the FreeBSD Project.
 */
 #endregion
 
-using System.IO;
-using System.Reflection;
-using SEPScience.SEP_UI;
 using SEPScience.Unity;
 using SEPScience.Unity.Unity;
 using UnityEngine;
@@ -42,7 +39,7 @@ using TMPro;
 
 namespace SEPScience.SEP_UI
 {
-	[KSPAddon(KSPAddon.Startup.EveryScene, false)]
+	[KSPAddon(KSPAddon.Startup.MainMenu, true)]
 	public class SEP_UI_Loader : MonoBehaviour
 	{
 		private static bool loaded;
@@ -73,8 +70,11 @@ namespace SEPScience.SEP_UI
 
 		private void Awake()
 		{
-			if (loaded)
-				Destroy(gameObject);
+            if (loaded)
+            {
+                Destroy(gameObject);
+                return;
+            }
 
 			if (loadedPrefabs == null)
 			{
