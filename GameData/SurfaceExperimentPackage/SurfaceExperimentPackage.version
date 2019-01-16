@@ -1,0 +1,22 @@
+{
+    "NAME":      "Surface Experiment Package",
+    "URL":       "https://raw.githubusercontent.com/CobaltWolf/Surface-Experiment-Pack/master/GameData/SurfaceExperimentPackage/SurfaceExperimentPackage.version",
+    "DOWNLOAD" : "https://github.com/CobaltWolf/Surface-Experiment-Pack/releases",
+    "GITHUB": {
+        "USERNAME":          "CobaltWolf",
+        "REPOSITORY":        "Surface-Experiment-Pack",
+        "ALLOW_PRE_RELEASE": false
+    },
+    "VERSION": {
+        "MAJOR": 2,
+        "MINOR": 7
+    },
+    "KSP_VERSION_MIN": {
+        "MAJOR": 1,
+        "MINOR": 4
+    },
+    "KSP_VERSION_MAX": {
+        "MAJOR": 1,
+        "MINOR": 6
+    }
+}
