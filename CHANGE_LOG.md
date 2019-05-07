@@ -1,5 +1,11 @@
 # Surface Experiment Pack :: Change Log
 
+* 2016-1128: 2.1.1 (CobatWolf) for KSP 1.2.1
+	+ Fix bug when landed in a biome with more than one word
+	+ Fix bug when adding parts to a station with running experiments
+	+ Fix bug when packing and unpacking SEP experiments from the KIS inventory
+	+ Prevent duplicate science data from being added to a part when a transmitter runs out of EC while transmitting
+	+ SEP Central Station checks for External Experiment Skill instead of Scientist Kerbal
 * 2016-1125: 2.1.0 (CobatWolf) for KSP 1.2.1
 	+ Add KSPedia entry
 	+ Add Blizzy Toolbar support
