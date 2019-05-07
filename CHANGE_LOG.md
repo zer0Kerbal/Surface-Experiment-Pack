@@ -1,5 +1,7 @@
 # Surface Experiment Pack :: Change Log
 
+* 2017-0602: 2.2 (CobatWolf) for KSP 1.3.0
+	+ Updated for KSP 1.3
 * 2017-0602: 2.1.6 (CobatWolf) for KSP 1.2.2
 	+ Fixes from cake>pie and DStaal
 	+ New Remotetech patch from ZeroA4
