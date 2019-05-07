@@ -1,5 +1,17 @@
 # Surface Experiment Pack :: Change Log
 
+* 2016-1125: 2.1.0 (CobatWolf) for KSP 1.2.1
+	+ Add KSPedia entry
+	+ Add Blizzy Toolbar support
+	+ Option to disable opening SEP window when hovering over the toolbar button (stock toolbar only)
+	+ Change girder surface attach position so that it can be attached to the Central Station without switching to stack attach mode
+	+ Fix experiment situation errors to clarify each instrument's requirements
+	+ Fix bugs with initial station setup
+	+ Fix bugs with adding new parts to an existing station
+	+ Fixed collision on magnetometer, gravimeter, and CCIG experiments. If they're still exploding for you its your fault
+	+ Fixed drop point for the cardboard box
+	+ Rescaled the long SEP locker to fit on the BDB LEM's quarter panels
+	+ Probably some other stuff
 * 2016-1113: 2.0.0 (CobatWolf) for KSP 1.2.1
 	+ Re-release of SEP.
 		- DMagic is now a primary contributor + coder.
