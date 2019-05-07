@@ -1,5 +1,9 @@
 # Surface Experiment Pack :: Change Log
 
+* 2018-0131: 2.5 (CobatWolf) for KSP 1.3.1
+	+ Added Fallen Astronaut
+	+ Fixed bugs with science system
+	+ Fixed scaled flag
 * 2017-1011: 2.4 (CobatWolf) for KSP 1.3.1
 	+ updated for 1.3.1
 	+ community fixes
