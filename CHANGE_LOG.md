@@ -1,5 +1,7 @@
 # Surface Experiment Pack :: Change Log
 
+* 2016-0502: 1.4.1 (CobatWolf) for KSP 1.1.2
+	+ Hotfix for v1.4, fixes broken sciencedefs.
 * 2016-0428: 1.4 (CobatWolf) for KSP 1.1
 	+ Updated for 1.1
 	+ Included new version of DMagicScienceAnimate
