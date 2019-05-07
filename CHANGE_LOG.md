@@ -1,5 +1,7 @@
 # Surface Experiment Pack :: Change Log
 
+* 2019-0113: 2.7 (CobatWolf) for KSP 1.6.1
+	+ Update for KSP 1.6. Includes fixes for the new KIS/KAS version courtesy of user Friznit.
 * 2018-0320: 2.6 (CobatWolf) for KSP 1.4.1
 	+ Support for KSP v1.4.1
 * 2018-0131: 2.5 (CobatWolf) for KSP 1.3.1
