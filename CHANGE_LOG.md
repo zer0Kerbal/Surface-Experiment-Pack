@@ -1,5 +1,8 @@
 # Surface Experiment Pack :: Change Log
 
+* 2017-1011: 2.4 (CobatWolf) for KSP 1.3.1
+	+ updated for 1.3.1
+	+ community fixes
 * 2017-0602: 2.3 (CobatWolf) for KSP 1.3.0
 	+ rebalance by cake>pie
 * 2017-0602: 2.2 (CobatWolf) for KSP 1.3.0
