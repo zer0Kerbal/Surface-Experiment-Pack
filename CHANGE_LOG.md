@@ -1,5 +1,7 @@
 # Surface Experiment Pack :: Change Log
 
+* 2016-0317: 1.3 (CobatWolf) for KSP 1.0.5
+	+ Fixed the screwdriver (again!)
 * 2016-0314: 1.2 (CobatWolf) for KSP 1.0.5
 	+ Fixed a weird bug with the solar panels.
 * 2016-0229: 1 (CobatWolf) for KSP 1.0.5
