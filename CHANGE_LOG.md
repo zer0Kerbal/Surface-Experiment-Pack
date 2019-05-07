@@ -1,5 +1,8 @@
 # Surface Experiment Pack :: Change Log
 
+* 2016-0630: 1.4.2 (CobatWolf) for KSP 1.1.3
+	+ Parts are now much more firmly connected to the ground
+	+ Two new power connectors
 * 2016-0502: 1.4.1 (CobatWolf) for KSP 1.1.2
 	+ Hotfix for v1.4, fixes broken sciencedefs.
 * 2016-0428: 1.4 (CobatWolf) for KSP 1.1
