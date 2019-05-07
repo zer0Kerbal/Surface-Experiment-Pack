@@ -1,5 +1,7 @@
 # Surface Experiment Pack :: Change Log
 
+* 2016-1216: 2.1.3 (CobatWolf) for KSP 1.2.2
+	+ No changelog provided
 * 2016-1216: 2.1.2 (CobatWolf) for KSP 1.2.2
 	+ Hotfix for UI bugs in v2.1.2
 * 2016-1128: 2.1.1 (CobatWolf) for KSP 1.2.1
