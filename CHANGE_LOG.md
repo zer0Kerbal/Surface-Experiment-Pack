@@ -1,5 +1,7 @@
 # Surface Experiment Pack :: Change Log
 
+* 2017-0513: 2.1.5 (CobatWolf) for KSP 1.2.2
+	+ Contains fixes from users DStaal and cake>pie. Thanks fellas!
 * 2017-0314: 2.1.4 (CobatWolf) for KSP 1.2.2
 	+ Changelog:
 		- Whole bunch of grammatical fixes by Github user Jon Fortescue
