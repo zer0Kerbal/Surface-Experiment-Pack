@@ -1,5 +1,10 @@
 # Surface Experiment Pack :: Change Log
 
+* 2016-1113: 2.0.0 (CobatWolf) for KSP 1.2.1
+	+ Re-release of SEP.
+		- DMagic is now a primary contributor + coder.
+		- Overhaul of SEP science system - see second post in new thread as an explanation.
+		- Fixed some colliders to further reduce or eliminate explosions.
 * 2016-0630: 1.4.2 (CobatWolf) for KSP 1.1.3
 	+ Parts are now much more firmly connected to the ground
 	+ Two new power connectors
