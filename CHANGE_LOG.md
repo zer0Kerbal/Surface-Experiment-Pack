@@ -1,5 +1,14 @@
 # Surface Experiment Pack :: Change Log
 
+* 2016-0428: 1.4 (CobatWolf) for KSP 1.1
+	+ Updated for 1.1
+	+ Included new version of DMagicScienceAnimate
+	+ Added Surface Magnetometer
+	+ Added Surface Gravimeter
+	+ Added two sizes of storage locker
+	+ Added cardboard box to carry your equipment in
+	+ Added AKI flag
+	+ Added AKI as an agency
 * 2016-0317: 1.3 (CobatWolf) for KSP 1.0.5
 	+ Fixed the screwdriver (again!)
 * 2016-0314: 1.2 (CobatWolf) for KSP 1.0.5
