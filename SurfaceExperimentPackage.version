@@ -1,17 +1,18 @@
 {
-    "NAME"     : "Surface Experiment Pack (SEP)",
-	"URL"	   : "https://raw.githubusercontent.com/zer0Kerbal/SurfaceExperimentPack/master/SurfaceExperimentPack.version",
-	"DOWNLOAD" : "https://github.com/zer0Kerbal/SurfaceExperimentPack/releases/latest",
-	"CHANGE_LOG_URL" : "https://raw.githubusercontent.com/zer0Kerbal/SurfaceExperimentPack/master/Changelog.cfg",
+	"NAME"		     : "Surface Experiment Pack (SEP)",
+	"URL"			 : "https://raw.githubusercontent.com/zer0Kerbal/SurfaceExperimentPack/master/SurfaceExperimentPack.version",
+	"DOWNLOAD"	     : "https://github.com/zer0Kerbal/SurfaceExperimentPack/releases/latest",
+	"CHANGE_LOG_URL" : "https://raw.githubusercontent.com/zer0Kerbal/SurfaceExperimentPack/master/changelog.md",
 	"GITHUB" :
 	{
-        "USERNAME"          : "zer0Kerbal",
-        "REPOSITORY"        : "SurfaceExperimentPack",
-        "ALLOW_PRE_RELEASE" : false
-    },
-    "VERSION": {
-        "MAJOR" : 2,
-        "MINOR" : 7,
+		"USERNAME"	        : "zer0Kerbal",
+		"REPOSITORY"		: "SurfaceExperimentPack",
+		"ALLOW_PRE_RELEASE" : false
+	},
+	"VERSION" :
+	{
+		"MAJOR" : 2,
+		"MINOR" : 7,
 		"PATCH" : 1,
 		"BUILD" : 0
 	},
@@ -35,7 +36,7 @@
 	},
 	"INSTALL_LOC" :
 	{
-		"NAME"      : "SurfaceExperimentPack",
+		"NAME" :	  "SurfaceExperimentPack",
 		"DIRECTORY" : "SurfaceExperimentPack"
 	}
 }
