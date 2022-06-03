@@ -91,7 +91,7 @@ updated: 10 May 2022
 [albertkermin]: https://forum.kerbalspaceprogram.com/index.php?/profile/110967-*/ "AlbertKermin"
 [cobatwolf]: https://forum.kerbalspaceprogram.com/index.php?/profile/105588-*/ "CobatWolf"
 [dmagic]: https://forum.kerbalspaceprogram.com/index.php?/profile/57416-*/ "DMagic"
-[beale] https://forum.kerbalspaceprogram.com/index.php?/profile/70533-*/ "Beale"
+[beale]: https://forum.kerbalspaceprogram.com/index.php?/profile/70533-*/ "Beale"
 [kospy]: https://forum.kerbalspaceprogram.com/index.php?/profile/33868-*/ "KospY"
 [igorz]: https://forum.kerbalspaceprogram.com/index.php?/profile/155445-*/ "IgorZ"
 [dunrana]: https://forum.kerbalspaceprogram.com/index.php?/profile/138830-*/ "Dunrana"
