@@ -17,18 +17,26 @@ updated: 17 May 2022 -->
 
 
 
-## By [`zer0Kerbal`][zer0Kerbal], originally by [`Sage Sagan`][sagesagan] with [@Daemoria`][daemoria] and [`Blackheart612`][blackheart]  
+## By [`zer0Kerbal`][zer0Kerbal], originally by [`AlbertKermin`][albertkKermin] and [`CobaltWolf`][cobaltwolf]  
 
 adopted with *express* permission and brought to you by *KerbSimpleCo*
 
 <img src="https://raw.githubusercontent.com/zer0Kerbal/SurfaceExperimentPack/master/img/HeroLogo_1920x1920.png" alt="SurfaceExperimentPack Hero" width="72%" height="72%">
 
-<details>
-  <summary><b>Preamble by <a href="https://forum.kerbalspaceprogram.com/index.php?/profile/102159-sage-sagan/">@Sage Sagan</a></b></summary>
-  <p>I love Helldiver's KSO, but it got me thinking about the WEKA and the idea of a REALLY small lifting body shuttle(1.25m scale) for crew return and emergency returns from orbit. So after a few abortive attempts at Blender which resulted in the kind of design that should be drowned at birth, I decided to draw on a napkin at work(aren't those always the best designs?).</p>
-  <p>The idea ~would be~ [was] to keep a very low part count, so ideally it will consist of only 6-8 parts i.e. Fuselage,right and left winglets ,docking port,two oms engines. The OMS engines would be R.C.S fueled so they can share the same internal R.C.S. tanks as the thrusters. The shuttle will seat 2 kerbals in a tandem configuration with hopefully RPM displays(2), as a place holder the MK2 cockpit IVA could be used as config is similar.<p>
-  <p>The shuttle, when fueled would weigh in at around 1.8 tonnes and due to it's size will fit in a 2.5m fairing which makes it much easier to launch especially for FAR uses. I picture it as being slightly wider that a MK2 cockpit. This is not shown on the sketch but the docking collar will fit on the rear. The compact size means it should fit in a 2.5m cargo bay for carrying on larger ships etc.</p>
-</details>
+### Preamble by [`AlbertKermin`][LINK:albertkermin]  
+
+A long while ago, I created a mod called Munar Surface Experiment Pack, which was a decent mod, if I do say so myself. However, it was plagued with perpetual bugs, which, eventually, caused me to lose interest.
+
+However, several weeks ago, the awesome [`CobaltWolf`][LINK:cobaltwolf] contacted me with the proposal that we collaborate on a remake of this mod. Naturally, I jumped at the chance.
+
+Surface Experiment Pack is a much, much different mod than the old Munar Surface Experiment Pack, and much closer to the actual ALSEP experiments.
+
+## Features 
+
+This mod adds two parts
+- Part: command/parachute
+- Part: heatshield/cargobay
+- RemoteTech configs are included.
 
 ---
 
@@ -45,30 +53,7 @@ adopted with *express* permission and brought to you by *KerbSimpleCo*
 
 ### Youtube review by [`Kottabos Gaming`](https://forum.kerbalspaceprogram.com/index.php?/profile/36583-*/)
 
-[![Kottabos reviews Dreamer](https://img.youtube.com/vi/Oj1etoybd7E/0.jpg)](https://www.youtube.com/watch?v=Oj1etoybd7E)
-
-<details>
-  <summary><b>Youtube review by <a href="https://forum.kerbalspaceprogram.com/index.php?/profile/36583-*/ ">@Kottabos Gaming</a></b></summary>
-  Support on <a href="https://www.patreon.com/Kottabosgames">Patreon.</a>
-  <iframe width="1136" height="639" src="https://www.youtube.com/embed/Oj1etoybd7E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</details>
-
-<details>
-	<summary><b>Some of the amazing modeling work of <a href="https://forum.kerbalspaceprogram.com/index.php?/profile/103696-daemoria/">@Daemoria</a></b></summary>
-    <pre>Some of the amazing modeling work of Daemoria</pre>
-    <img src="https://camo.githubusercontent.com/9d01269db79915ac1e33591e3c104d235629ee2c882d055b5bace08ea45d368a/68747470733a2f2f692e696d6775722e636f6d2f3937733170304f2e706e67" alt="Some of the amazing modeling work of Daemoria" width="75%" height="75%">
-</details>
-
-<details>
-    <summary><b>More inspiration</b></summary>
-    Test Flight!: More inspiration
-    <img src="https://i.imgur.com/T6pyukJ.jpg" alt="More inspiration" width="75%" height="75%">
-</details>
-
-<details>
-    <summary><b>Fruit Bat Industries mk I</b></summary>
-    <img src="https://i.imgur.com/KpBnYY2.jpg" alt="Fruit Bat Industries SurfaceExperimentPack mk I" width="75%" height="75%">
-</details>
+[![Kottabos reviews Surface Experiement Pack](https://img.youtube.com/vi/p6v1m0FTf0A/0.jpg)](https://www.youtube.com/watch?v=p6v1m0FTf0A)
 
 ### Help Wanted
 
@@ -133,11 +118,11 @@ or [![CKAN][CKAN:img]][CKAN:url]
   <summary>Credits and Special Thanks</summary>
   <summary>see [Attribution.md][MOD:attr] for more comprehensive list</summary>
   <ul>
-	<li><a href="https://forum.kerbalspaceprogram.com/index.php?/profile/173506-overkill13/">@overkill13</a> for massive amount of testing and suggestions </li>
-    <li><a href="https://forum.kerbalspaceprogram.com/index.php?/profile/201212-kawaiilucy/">@KawaiiLucy</a> for Restock whitelist </li>
-	<li><a href="https://forum.kerbalspaceprogram.com/index.php?/profile/102159-sage-sagan/">@Sage Sagan</a> for creating this mod </li>
-	<li><a href="https://forum.kerbalspaceprogram.com/index.php?/profile/42741-blackheart612/">@Blackheart612</a> texture and logo work </li>
-	<li><a href="https://forum.kerbalspaceprogram.com/index.php?/profile/103696-daemoria/">@Daemoria</a> models and other things </li>
+	<li><a href="https://forum.kerbalspaceprogram.com/index.php?/profile/173506-overkill13/">overkill13</a> for massive amount of testing and suggestions </li>
+    <li><a href="https://forum.kerbalspaceprogram.com/index.php?/profile/201212-kawaiilucy/">KawaiiLucy</a> for Restock whitelist </li>
+	<li><a href="https://forum.kerbalspaceprogram.com/index.php?/profile/102159-sage-sagan/">CobaltWolf</a> for creating this mod </li>
+	<li><a href="https://forum.kerbalspaceprogram.com/index.php?/profile/42741-blackheart612/">Blackheart612</a> texture and logo work </li>
+	<li><a href="https://forum.kerbalspaceprogram.com/index.php?/profile/103696-AlbertKermin/">AlbertKermin</a> models and other things </li>
 	</ul>
 </details>
 
@@ -155,7 +140,7 @@ or [![CKAN][CKAN:img]][CKAN:url]
 
 ##### see [Notices.md][MOD:notic] for more *legal mumbo jumbo*
 
-#### Original (0) - Author: [`Sage Sagan`][sagesagan]
+#### Original (0) - Author: [`CobaltWolf`][cobaltwolf]
 
 > Forum: [Thread][MOD:0:thread] - Download: [Dropbox][MOD:0:dnload] - Source: [Dropbox][MOD:0:source]  
 > License: [![License][LIC:0:shd]][LIC:0:url] ![License][LIC:0:log]
@@ -171,7 +156,7 @@ or [![CKAN][CKAN:img]][CKAN:url]
 [MOD:chlog]: https://raw.githubusercontent.com/zer0Kerbal/SurfaceExperimentPack/master/changelog.md  "Changelog"
 [MOD:contr]: https://github.com/zer0Kerbal/.github/blob/master/.github/CONTRIBUTING.md "Contributing"
 [MOD:discu]: https://github.com/zer0Kerbal/SurfaceExperimentPack/discussions "Discussions"
-[MOD:forum]: https://forum.kerbalspaceprogram.com/index.php?/topic/192742-*/ "SurfaceExperimentPack Forum Thread"
+[MOD:forum]: https://forum.kerbalspaceprogram.com/index.php?/topic/208429-*/ "SurfaceExperimentPack Forum Thread"
 [MOD:issue]: https://github.com/zer0Kerbal/SurfaceExperimentPack/issues "Issues"
 [MOD:licns]: https://github.com/zer0Kerbal/SurfaceExperimentPack/blob/master/LICENSE "Github License"
 [MOD:notic]: https://zer0kerbal.github.io/SurfaceExperimentPack/Notices "GitHub Pages"
@@ -298,9 +283,9 @@ https://img.shields.io/badge/License-GPLv3-A42E2B?style=plastic&labelColor=white
 [twitter]: https://twitter.com/zer0Kerbal
 [youtube]: https://www.youtube.com/channel/UCp9c8IaK4Gjgfj3O9QxrbDw
 
-[sagesagan]:  https://forum.kerbalspaceprogram.com/index.php?/profile/102159-*/ "Sage Sagan"
+[cobaltwolf]:  https://forum.kerbalspaceprogram.com/index.php?/profile/102159-*/ "CobaltWolf"
 [blackheart]: https://forum.kerbalspaceprogram.com/index.php?/profile/42741-*/ "Blackheart612"
-[daemoria]:   https://forum.kerbalspaceprogram.com/index.php?/profile/103696-*/ "Daemoria"  
+[AlbertKermin]:   https://forum.kerbalspaceprogram.com/index.php?/profile/103696-*/ "AlbertKermin"  
 [zer0Kerbal]: https://forum.kerbalspaceprogram.com/index.php?/profile/190933-*/ "zer0Kerbal"
 
 [IMG:flg:0]: https://via.placeholder.com/256x160png/ffffff/bada55?text=KGEx "Mini Sample Return Capsule Flag"
@@ -311,7 +296,7 @@ https://img.shields.io/badge/License-GPLv3-A42E2B?style=plastic&labelColor=white
 
 Track progress: issues [here][MOD:issue] and projects [here](https://github.com/zer0Kerbal/SurfaceExperimentPack/projects/) along with **[The Short List](https://github.com/users/zer0Kerbal/projects/27)**
 
-[<img align="left" alt="kerbalspaceprogram.com" width="32px" src="https://cdn.icon-icons.com/icons2/1381/PNG/32/kerbalspaceprogram_93898.png" />][zer0Kerbal] [<img align="left" alt="zer0Kerbal | CurseForge" width="32px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/curseforge.svg" />][curseforge] [<img align="left" alt="zer0Kerbal | CurseForge" width="32px" src="https://cdn.icon-icons.com/icons2/1945/PNG/512/iconfinder-reddit-4661631_122483.png" />][reddit] [<img align="left" alt="zer0Kerbal | CurseForge" width="32px" src="https://cdn.icon-icons.com/icons2/2429/PNG/512/patreon_logo_icon_147253.png" />][PATREON:url] [<img align="left" alt="zer0Kerbal | YouTube" width="32px" src="https://cdn.icon-icons.com/icons2/836/PNG/512/Youtube_icon-icons.com_66802.png" />][youtube] [<img align="left" alt="zer0Kerbal | Twitch" width="32px" src="https://cdn.icon-icons.com/icons2/2699/PNG/512/twitch_logo_icon_170383.png" />][twitch] [<img align="left" alt="zer0Kerbal | CurseForge" width="32px" src="https://cdn.icon-icons.com/icons2/2699/PNG/512/paypal_logo_icon_168055.png" />][PAYPAL:url] [<img align="left" alt="zer0Kerbal | buy me a coffee" width="32px" src="https://www.buymeacoffee.com/assets/img/bmc-meta-new/new/favicon.ico" />][BMCC:url] [<img align="left" alt="zer0Kerbal | Twitter" width="32px" src="https://cdn.icon-icons.com/icons2/836/PNG/32/Twitter_icon-icons.com_66803.png" />][twitter]
+[<img align="left" alt="kerbalspaceprogram.com" width="32px" src="https://cdn.icon-icons.com/icons2/1381/PNG/32/kerbalspaceprogram_93898.png" />][zer0Kerbal] [<img align="left" alt="zer0Kerbal | CurseForge" width="32px" src="https://cdn.jsdelivr.net/npm/simple-iconsv3/icons/curseforge.svg" />][curseforge] [<img align="left" alt="zer0Kerbal | CurseForge" width="32px" src="https://cdn.icon-icons.com/icons2/1945/PNG/512/iconfinder-reddit-4661631_122483.png" />][reddit] [<img align="left" alt="zer0Kerbal | CurseForge" width="32px" src="https://cdn.icon-icons.com/icons2/2429/PNG/512/patreon_logo_icon_147253.png" />][PATREON:url] [<img align="left" alt="zer0Kerbal | YouTube" width="32px" src="https://cdn.icon-icons.com/icons2/836/PNG/512/Youtube_icon-icons.com_66802.png" />][youtube] [<img align="left" alt="zer0Kerbal | Twitch" width="32px" src="https://cdn.icon-icons.com/icons2/2699/PNG/512/twitch_logo_icon_170383.png" />][twitch] [<img align="left" alt="zer0Kerbal | CurseForge" width="32px" src="https://cdn.icon-icons.com/icons2/2699/PNG/512/paypal_logo_icon_168055.png" />][PAYPAL:url] [<img align="left" alt="zer0Kerbal | buy me a coffee" width="32px" src="https://www.buymeacoffee.com/assets/img/bmc-meta-new/new/favicon.ico" />][BMCC:url] [<img align="left" alt="zer0Kerbal | Twitter" width="32px" src="https://cdn.icon-icons.com/icons2/836/PNG/32/Twitter_icon-icons.com_66803.png" />][twitter]
 
 <!-- footnotes -->
 [^1]: this isn't a mod. ;P
