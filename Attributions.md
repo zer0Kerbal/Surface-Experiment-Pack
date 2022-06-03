@@ -29,10 +29,8 @@ updated: 10 May 2022
   <li><a href="https://forum.kerbalspaceprogram.com/index.php?/profile/57416-*/"><img border="0" alt="DMagic" src="https://kerbal-forum-uploads.s3.us-west-2.amazonaws.com/set_resources_17/84c1e40ea0e759e3f1505eb1788ddf3c_default_photo.png" width="50" height="50" > DMagic</a> for creating the new plugin on which the science system runs.</li>
   <li><a href="https://forum.kerbalspaceprogram.com/index.php?/profile/33868-*/"><img border="0" alt="KospY" src="https://kerbal-forum-uploads.s3.us-west-2.amazonaws.com/profile/photo-33868.png" width="50" height="50" > KospY</a> and <a href="https://forum.kerbalspaceprogram.com/index.php?/profile/93697-*/"><img border="0" alt="IgorZ" src="https://kerbal-forum-uploads.s3.us-west-2.amazonaws.com/monthly_2017_11/Hawaii-Tron.thumb.png.5ab3ea90f3cebae37d9f14c64f9c36e6.png" width="50" height="50" > IgorZ</a> for creating the <a href="https://forum.kerbalspaceprogram.com/index.php?/topic/142594-*/" alt="Kerbal Attachment System (KAS)">Kerbal Attachment System (KAS)</a> and <a href="https://forum.kerbalspaceprogram.com/index.php?/topic/149848-*/" alt="Kerbal Attachment System (KAS)">Kerbal Inventory System (KIS)</a> addons, which Surface Experiment Pack (SEP) relies on.</li>
   <li><a href="https://forum.kerbalspaceprogram.com/index.php?/profile/138830-*/"><img border="0" alt="Dunrana" src="https://kerbal-forum-uploads.s3.us-west-2.amazonaws.com/set_resources_17/84c1e40ea0e759e3f1505eb1788ddf3c_default_photo.png" width="50" height="50" > Dunrana</a> for helping write the Science definitions, testing, and generally getting [CobaltWolf] back to work on the mod.</li>
-  <li><i>JefferyCor, for advice on repairing one of this mod's more troublesome bugs.</i></li>
+  <li>JefferyCor, for advice on repairing one of this mod's more troublesome bugs.</li>
   <li><i>Thank you to everyone who gave feedback! It's very important for me and highly appreciated.</i></li>
-
-  <li><a href="https://forum.kerbalspaceprogram.com/index.php?/profile/81209-*/"><img border="0" alt="Bezzier" src="https://kerbal-forum-uploads.s3.us-west-2.amazonaws.com/set_resources_17/84c1e40ea0e759e3f1505eb1788ddf3c_default_photo.png" width="50" height="50" > Bezzier</a> for picking up where DaMichel left off (Color Curves)</li>
 </ul>
 
 ### Flag(s)
@@ -79,8 +77,6 @@ updated: 10 May 2022
   <li><a href="https://forum.kerbalspaceprogram.com/index.php?/profile/105588-*/"><img border="0" alt="CobatWolf" src="https://kerbal-forum-uploads.s3.us-west-2.amazonaws.com/monthly_2019_02/PFP_2019.thumb.jpg.1bfcc53a8d2175db2f28bf8f0181a37f.jpg" width="50" height="50" > CobatWolf</a> for creating the new models and parts used in <a href="https://forum.kerbalspaceprogram.com/index.php?/topic/77858-*/" alt="Surface Experiment Pack"> Surface Experiment Pack (SEP)</a></li>
   <li><a href="https://forum.kerbalspaceprogram.com/index.php?/profile/70533-*/"><img border="0" alt="Beale" src="https://kerbal-forum-uploads.s3.us-west-2.amazonaws.com/monthly_2021_02/scrongolable.thumb.png.34a204aec1a871db4d1cee8a3549ce62.png" width="50" height="50" >Beale</a> whose solar panel texture we used (with permission).</li>
 </ul>
-
-
 
 ### Testing and Support
 
