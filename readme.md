@@ -13,7 +13,7 @@ updated: 17 May 2022 -->
 
 # Surface Experiment Pack (SEP)
 
-***Micro Shuttle and Rescue Vehicle*** for three (3) kerbals by Fruit Bat Industries. This is ***not*** a SSTO.
+An addon that adds science packages that must be constructed prior to use for Kerbal Space Program.
 
 
 
