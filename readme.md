@@ -1,7 +1,7 @@
-<!-- readme.md v1.6.8.0
+<!-- readme.md v1.6.8.1
 Surface Experiment Pack (SEP)
 created: 17 Jul 2017
-updated: 17 May 2022 -->
+updated: 01 Jun 2022 -->
 
 <!--this file: CC BY-ND 4.0 by zer0Kerbal-->
 
@@ -23,11 +23,11 @@ adopted with *express* permission and brought to you by *KerbSimpleCo*
 
 <img src="https://raw.githubusercontent.com/zer0Kerbal/SurfaceExperimentPack/master/img/HeroLogo_1920x1920.png" alt="SurfaceExperimentPack Hero" width="72%" height="72%">
 
-### Preamble by [`AlbertKermin`][LINK:albertkermin]  
+### Preamble by [`AlbertKermin`][albertkermin]  
 
 A long while ago, I created a mod called Munar Surface Experiment Pack, which was a decent mod, if I do say so myself. However, it was plagued with perpetual bugs, which, eventually, caused me to lose interest.
 
-However, the awesome [`CobaltWolf`][LINK:cobaltwolf] contacted me with the proposal that we collaborate on a remake of this mod. Naturally, I jumped at the chance.
+However, the awesome [`CobaltWolf`][cobaltwolf] contacted me with the proposal that we collaborate on a remake of this mod. Naturally, I jumped at the chance.
 
 Surface Experiment Pack is a much, much different mod than the old Munar Surface Experiment Pack, and much closer to the actual ALSEP experiments.
 
