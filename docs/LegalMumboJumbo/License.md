@@ -5,7 +5,7 @@ title: License - BSD-2-Clause
 
 <!--
 BSD-2-Clause.md v1.0.1.0
-MOD-NAME (Abbv)
+Surface Experiment Pack (SEP)
 created: 01 Jun 2022
 updated: 
 -->
