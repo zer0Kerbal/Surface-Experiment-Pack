@@ -12,6 +12,9 @@
 
 ## Version 2.7.99.0-adoption `<EDITION>` edition
 
+* 10 Jun 2022  
+* Release for Kerbal Space Program [KSP 1.11.x]
+
 ### Fix
 
 * combine multiple line strings into one with `\n`
@@ -55,7 +58,6 @@
   * Updates #48 - Camera Experiment Package
   * Updates #49 - Locker balance is off
   * Updates #50 - Screwdriver not working as intended
-
 
 
 ---
