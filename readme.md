@@ -31,12 +31,12 @@ However, several weeks ago, the awesome [`CobaltWolf`][LINK:cobaltwolf] contacte
 
 Surface Experiment Pack is a much, much different mod than the old Munar Surface Experiment Pack, and much closer to the actual ALSEP experiments.
 
-## Features 
+## Features
 
-This mod adds two parts
-- Part: command/parachute
-- Part: heatshield/cargobay
-- RemoteTech configs are included.
+* This mod adds two parts
+  * Part: command/parachute
+  * Part: heatshield/cargobay
+  * RemoteTech configs are included.
 
 ---
 
@@ -68,6 +68,7 @@ This mod adds two parts
 ### Localization
 
 >* ![English][EN] English
+>* ![Español][ES] Spanish (Español)
 >* ***your translation here***
 >
 > HELP WANTED - See the [README in the Localization folder][lreadme] or the [Quickstart Guide][qstart] for instructions for adding or improving translations. [GitHub][GitHub:url] push is the best way to contribute. *Additions and corrections welcome!*
@@ -88,6 +89,8 @@ or [![CKAN][CKAN:img]][CKAN:url]
 ### Dependencies
 
 * [Kerbal Space Program][KSP:url] [![Kerbal Space Program][KSP:shd]][KSP:url] [^2]
+* [Kerbal Attachment System (KAS)][kis]
+* [Kerbal Inventory System (KIS)][kas]
 
 ### Supports
 
@@ -206,10 +209,6 @@ https://img.shields.io/badge/License-GPLv3-A42E2B?style=plastic&labelColor=white
 [LIC:0:shd]: https://img.shields.io/badge/License-BSD--2--Clause-AB2B28?labelColor=white&style=plastic&logoColor=AB2B28&logo=FreeBSD "SimpleBSD-2-Clause"
 -->
 
-<!--- AVC -->
-[AVC:shd]: https://img.shields.io/badge/KSP-AVC--supported-00C961.svg?labelColor=black&style=plastic
-[AVCVLD:shd]: https://github.com/zer0Kerbal/SurfaceExperimentPack/workflows/Validate%20AVC%20.version%20files/badge.svg?labelColor=black&style=plastic "AVC-Valid - thank you to DasSkelett"
-
 <!--- CKAN -->
 [CKAN:img]: https://i.postimg.cc/x8XSVg4R/sj507JC.png "CKAN"
 [CKAN:url]: http://forum.kerbalspaceprogram.com/index.php?/topic/197082-*/ "CKAN"
@@ -222,7 +221,7 @@ https://img.shields.io/badge/License-GPLv3-A42E2B?style=plastic&labelColor=white
 [GITHUB:url]: https://github.com/zer0Kerbal/SurfaceExperimentPack/ "GitHub"
 [GITHUB:shd]: https://img.shields.io/badge/Github-Link-CCFF00.svg?labelColor=181717&style=plastic&logo=github "GitHub"
 
-[SPCDCK:url]: http://spacedock.info/mod/2379 "SpaceDock"
+[SPCDCK:url]: http://spacedock.info/mod/318 "SpaceDock"
 [SPCDCK:shd]:  https://img.shields.io/badge/SpaceDock-Link-CCFF00.svg?labelColor=181717&style=plastic&logo=data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCA1MDAgNTAwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MDAgNTAwOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+Cgkuc3Qwe2ZpbGw6IzFBMUExQTt9Cgkuc3Qxe2ZpbGw6IzA1Nzg5Mzt9Cgkuc3Qye2ZpbGw6IzA3QUNEMjt9Cjwvc3R5bGU+CjxwYXRoIGlkPSJYTUxJRF8xXyIgY2xhc3M9InN0MCIgZD0iTTQwMCwwLjZIMTAwYy01NSwwLTEwMCw0NS0xMDAsMTAwVjQwMGMwLDU1LDQ1LDEwMCwxMDAsMTAwaDMwMGM1NSwwLDEwMC00NSwxMDAtMTAwVjEwMC42CglDNTAwLDQ1LjYsNDU1LDAuNiw0MDAsMC42eiIvPgo8ZyBpZD0iWE1MSURfNl8iPgoJPGcgaWQ9IlhNTElEXzlfIj4KCQk8cGF0aCBpZD0iWE1MSURfMTdfIiBjbGFzcz0ic3QxIiBkPSJNMTgzLjMsMTY1LjljNi40LTMuNiwxNi45LTMuNiwyMy4zLDBMNDY3LjQsMzE0YzYuNCwzLjYsNi40LDkuNiwwLDEzLjJMMjA2LjYsNDc0LjQKCQkJYy02LjQsMy42LTE3LjcsNi42LTI1LDYuNmgtNDQuOGMtNy40LDAtOC4xLTMtMS43LTYuNmwyNjEtMTQ3LjJjNi40LTMuNiw2LjQtOS42LDAtMTMuMkwxNzEsMTg2Yy02LjQtMy42LTYuNC05LjYsMC0xMy4yCgkJCUwxODMuMywxNjUuOXoiLz4KCTwvZz4KCTxnIGlkPSJYTUxJRF84XyI+CgkJPHBhdGggaWQ9IlhNTElEXzE2XyIgY2xhc3M9InN0MiIgZD0iTTMxOC44LDE5Yy03LjQsMC0xOC42LDIuOC0yNSw2LjRMMzMsMTczLjRjLTYuNCwzLjYtNi40LDkuNSwwLDEzLjFsMjYwLjcsMTQ3LjEKCQkJYzYuNCwzLjYsMTYuOSwzLjYsMjMuMywwbDEyLjMtN2M2LjQtMy42LDYuNC05LjUsMC0xMy4ybC0yMjUuMS0xMjdjLTYuNC0zLjYtNi40LTkuNSwwLTEzLjJMMzY1LjYsMjUuNGM2LjQtMy42LDUuNi02LjQtMS43LTYuNAoJCQlIMzE4Ljh6Ii8+Cgk8L2c+CjwvZz4KPC9zdmc+Cg==  "SpaceDock"
 
 <!-- Kerbal Space Program -->
@@ -240,8 +239,8 @@ https://img.shields.io/badge/License-GPLv3-A42E2B?style=plastic&labelColor=white
 [GPO]: https://forum.kerbalspaceprogram.com/index.php?/topic/207732-*/ "GPO SpeedPump (GPO)"
 [atp]: https://forum.kerbalspaceprogram.com/index.php?/topic/138433-*/ "JSI Advanced Transparent Pods"
 [b9ps]: https://forum.kerbalspaceprogram.com/index.php?/topic/140541-*/ "B9 Part Switch"
-[kas]: http://forum.kerbalspaceprogram.com/index.php?/topic/142594-*/ "Kerbal Attachment System"
-[kis]: http://forum.kerbalspaceprogram.com/index.php?/topic/149848-*/ "Kerbal Inventory System"
+[kas]: https://forum.kerbalspaceprogram.com/index.php?/topic/142594-*/ "Kerbal Attachment System (KAS)"
+[kis: https://forum.kerbalspaceprogram.com/index.php?/topic/149848-*/ "Kerbal Inventory System (KIS)"
 [kjr]: https://forum.kerbalspaceprogram.com/index.php?/topic/184206-*/ "Kerbal Joint Reinforcement-Next"
 [kurs]: https://github.com/linuxgurugamer/DockingCam "KURS style docking camera"
 [mas]:  https://forum.kerbalspaceprogram.com/index.php?/topic/160856-*/ "MOARdV's Avionics System"
@@ -283,9 +282,10 @@ https://img.shields.io/badge/License-GPLv3-A42E2B?style=plastic&labelColor=white
 [twitter]: https://twitter.com/zer0Kerbal
 [youtube]: https://www.youtube.com/channel/UCp9c8IaK4Gjgfj3O9QxrbDw
 
-[cobaltwolf]:  https://forum.kerbalspaceprogram.com/index.php?/profile/102159-*/ "CobaltWolf"
-[blackheart]: https://forum.kerbalspaceprogram.com/index.php?/profile/42741-*/ "Blackheart612"
-[AlbertKermin]:   https://forum.kerbalspaceprogram.com/index.php?/profile/103696-*/ "AlbertKermin"  
+[albertkermin]: https://forum.kerbalspaceprogram.com/index.php?/profile/110967-*/ "AlbertKermin"
+[cobatwolf]: https://forum.kerbalspaceprogram.com/index.php?/profile/105588-*/ "CobatWolf"
+[dmagic]: https://forum.kerbalspaceprogram.com/index.php?/profile/57416-*/ "DMagic"
+[beale]: https://forum.kerbalspaceprogram.com/index.php?/profile/70533-*/ "Beale" 
 [zer0Kerbal]: https://forum.kerbalspaceprogram.com/index.php?/profile/190933-*/ "zer0Kerbal"
 
 [IMG:flg:0]: https://via.placeholder.com/256x160png/ffffff/bada55?text=KGEx "Mini Sample Return Capsule Flag"
