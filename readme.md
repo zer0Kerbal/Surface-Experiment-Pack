@@ -27,7 +27,7 @@ adopted with *express* permission and brought to you by *KerbSimpleCo*
 
 A long while ago, I created a mod called Munar Surface Experiment Pack, which was a decent mod, if I do say so myself. However, it was plagued with perpetual bugs, which, eventually, caused me to lose interest.
 
-However, several weeks ago, the awesome [`CobaltWolf`][LINK:cobaltwolf] contacted me with the proposal that we collaborate on a remake of this mod. Naturally, I jumped at the chance.
+However, the awesome [`CobaltWolf`][LINK:cobaltwolf] contacted me with the proposal that we collaborate on a remake of this mod. Naturally, I jumped at the chance.
 
 Surface Experiment Pack is a much, much different mod than the old Munar Surface Experiment Pack, and much closer to the actual ALSEP experiments.
 
@@ -90,19 +90,27 @@ or [![CKAN][CKAN:img]][CKAN:url]
 
 * [Kerbal Space Program][KSP:url] [![Kerbal Space Program][KSP:shd]][KSP:url] [^2]
 * [Kerbal Attachment System (KAS)][kis]
+
+### Recommends
+
 * [Kerbal Inventory System (KIS)][kas]
-
-### Supports
-
 * Either [^3]
   * [Module Manager][mm]
   * [Module Manager /L][mml]
 
+### Suggests
+
 * [On Demand Fuel Cells (ODFC)][ODFC]
-* [Firespitter][fs] for fully functioning wheels. may invoke bouts of dizziness.
-* [NEAR-FAR][far]
-* [Restock][restock]
 * [GPO (Goo Pumps & Oils') Speed Pump (GPO)][GPO]
+* [TweakScale][twk]
+
+### Supports
+
+* [Kerbal Planetary Base Systems][kpbs]
+* [Kopernicus New Horizons Pack][knh]
+* [Outer Planets Mod][opm]
+* [RemoteTech][rt]
+* [TweakScale][twk]
 
 <div style="border:0.5px solid Tomato; background-color: #BADA55; color: #FF0000; text-align:center">
   <p><b>red box below is a link to forum post on how to get support</b></p>
@@ -113,21 +121,12 @@ or [![CKAN][CKAN:img]][CKAN:url]
 
 ### Credits and Special Thanks
 
-* [DaMichel][damichel] for creating this glorious parts addon!
-* [`Bezzier`][bezzier] for the picking up where [DaMichel][damichel] left off
+* [`AlbertKermin`][albertkermin] for creating this glorious parts addon!
+* [`CobaltWolf`][cobaltwolf] for the picking up where
+* [`DMagic`][dmagic] for creating the new plugin on which the science system runs.
+* [`Beale`][beale] whose solar panel texture we used (with permission).
+* [`KospY`][kospy] and [`IgorZ`][igorz] for the KAS/KIS mods which this mod relies on.
 * see [Attribution.md][MOD:attr] for more comprehensive list
-
-<details>
-  <summary>Credits and Special Thanks</summary>
-  <summary>see [Attribution.md][MOD:attr] for more comprehensive list</summary>
-  <ul>
-	<li><a href="https://forum.kerbalspaceprogram.com/index.php?/profile/173506-overkill13/">overkill13</a> for massive amount of testing and suggestions </li>
-    <li><a href="https://forum.kerbalspaceprogram.com/index.php?/profile/201212-kawaiilucy/">KawaiiLucy</a> for Restock whitelist </li>
-	<li><a href="https://forum.kerbalspaceprogram.com/index.php?/profile/102159-sage-sagan/">CobaltWolf</a> for creating this mod </li>
-	<li><a href="https://forum.kerbalspaceprogram.com/index.php?/profile/42741-blackheart612/">Blackheart612</a> texture and logo work </li>
-	<li><a href="https://forum.kerbalspaceprogram.com/index.php?/profile/103696-AlbertKermin/">AlbertKermin</a> models and other things </li>
-	</ul>
-</details>
 
 ### Legal Mumbo Jumbo (License *provenance*)
 
@@ -140,6 +139,12 @@ or [![CKAN][CKAN:img]][CKAN:url]
 >
 > ***All bundled mods are distributed under their own licenses***  
 > ***All art assets (textures, models, animations, sounds) are distributed under their own licenses***
+>
+> This work is presented under a Simplified BSD license.
+>
+> Art assets used in Surface Experiment Pack were made by Matthew (CobaltWolf) Mlodzienski and are licensed under a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. All credit for the wonderful new textures/models/artwork goes to CobaltWolf, who retains the copyright to his work.
+>
+> All source files for the mod, including uncompiled textures and models, are available upon request.
 
 ##### see [Notices.md][MOD:notic] for more *legal mumbo jumbo*
 
@@ -196,7 +201,6 @@ or [![CKAN][CKAN:img]][CKAN:url]
 [LIC:1:url]: https://choosealicense.com/licenses/bsd-2-clause/ "SimpleBSD-2-Clause"
 [LIC:1:shd]: https://img.shields.io/badge/License-BSD--2--Clause-AB2B28?labelColor=white&style=plastic&logoColor=AB2B28&logo=FreeBSD "SimpleBSD-2-Clause"
 
-
 <!--- CKAN -->
 [CKAN:img]: https://i.postimg.cc/x8XSVg4R/sj507JC.png "CKAN"
 [CKAN:url]: http://forum.kerbalspaceprogram.com/index.php?/topic/197082-*/ "CKAN"
@@ -218,21 +222,22 @@ or [![CKAN][CKAN:img]][CKAN:url]
 
 <!-- links to add-ons/mods -->  
 [ODFC]: https://forum.kerbalspaceprogram.com/index.php?/topic/187625-*/ "On Demand Fuel Cells"
-[fs]: https://github.com/snjo/Firespitter/ "Firespitter"
+[GPO]: https://forum.kerbalspaceprogram.com/index.php?/topic/207732-*/ "GPO SpeedPump (GPO)"
 [mm]: https://forum.kerbalspaceprogram.com/index.php?/topic/50533-*/ "Module Manager"
 [mml]: https://github.com/net-lisias-ksp/ModuleManager "Module Manager /L"
 [twk]: https://forum.kerbalspaceprogram.com/index.php?/topic/179030-*/ "TweakScale"
-[far]: https://forum.kerbalspaceprogram.com/index.php?/topic/179445-*/ "FAR"
-[restock]: https://forum.kerbalspaceprogram.com/index.php?/topic/182679-*/ "Restock"
-[GPO]: https://forum.kerbalspaceprogram.com/index.php?/topic/207732-*/ "GPO SpeedPump (GPO)"
-[atp]: https://forum.kerbalspaceprogram.com/index.php?/topic/138433-*/ "JSI Advanced Transparent Pods"
 [b9ps]: https://forum.kerbalspaceprogram.com/index.php?/topic/140541-*/ "B9 Part Switch"
 [kas]: https://forum.kerbalspaceprogram.com/index.php?/topic/142594-*/ "Kerbal Attachment System (KAS)"
-[kis: https://forum.kerbalspaceprogram.com/index.php?/topic/149848-*/ "Kerbal Inventory System (KIS)"
+[kis]: https://forum.kerbalspaceprogram.com/index.php?/topic/149848-*/ "Kerbal Inventory System (KIS)"
 [kjr]: https://forum.kerbalspaceprogram.com/index.php?/topic/184206-*/ "Kerbal Joint Reinforcement-Next"
-[kurs]: https://github.com/linuxgurugamer/DockingCam "KURS style docking camera"
-[mas]:  https://forum.kerbalspaceprogram.com/index.php?/topic/160856-*/ "MOARdV's Avionics System"
-[rpm]: https://forum.kerbalspaceprogram.com/index.php?/topic/105821-*/ "Raster Prop Monitor"
+
+[kpbs]: https://forum.kerbalspaceprogram.com/index.php?/topic/133606-*/ "Kerbal Planetary Base Systems"
+[knh]: https://forum.kerbalspaceprogram.com/index.php?/topic/102776-*/ "Kopernicus New Horizons Pack"
+[opm]: https://forum.kerbalspaceprogram.com/index.php?/topic/93999-*/ "Outer Planets Mod"
+[rt]: https://forum.kerbalspaceprogram.com/index.php?/topic/75245-*/ "RemoteTech"
+
+
+
 
 <!-- financial support -->
 [PAYPAL:img]: https://img.shields.io/badge/Buy%20me%20some%20-LFO-BADA55?style=for-the-badge&logo=paypal&labelColor=FFDD00/ "PayPal"
@@ -247,21 +252,21 @@ or [![CKAN][CKAN:img]][CKAN:url]
 <!-- Localization -->
 [lreadme]: https://github.com/zer0Kerbal/zer0Kerbal/blob/master/Localization/readme.md "Localization Readme"
 [qstart]: https://github.com/zer0Kerbal/zer0Kerbal/blob/master/Localization/quickstart.md "Quickstart"
-[EN]: https://raw.githubusercontent.com/zer0Kerbal/zer0Kerbal/zed'K/img/EN.png "English"  
+[EN]: https://raw.githubusercontent.com/zer0Kerbal/zer0Kerbal/zed'K/img/EN.png "English"
 [BR]: https://raw.githubusercontent.com/zer0Kerbal/zer0Kerbal/zed'K/img/BR.png "Português Brasil"
-[CN]: https://raw.githubusercontent.com/zer0Kerbal/zer0Kerbal/zed'K/img/CH.png "中文"  
-[DE]: https://raw.githubusercontent.com/zer0Kerbal/zer0Kerbal/zed'K/img/DE.png "Deutsch"  
-[ES]: https://raw.githubusercontent.com/zer0Kerbal/zer0Kerbal/zed'K/img/ES.png "Español"  
-[FR]: https://raw.githubusercontent.com/zer0Kerbal/zer0Kerbal/zed'K/img/FR.png "Français"  
-[IT]: https://raw.githubusercontent.com/zer0Kerbal/zer0Kerbal/zed'K/img/IT.png "Italiano"  
-[JA]: https://raw.githubusercontent.com/zer0Kerbal/zer0Kerbal/zed'K/img/JA.png "日本語"  
-[KO]: https://raw.githubusercontent.com/zer0Kerbal/zer0Kerbal/zed'K/img/KO.png "한국어"  
-[MX]: https://raw.githubusercontent.com/zer0Kerbal/zer0Kerbal/zed'K/img/MX.png "Mexicano Español"  
-[NL]: https://raw.githubusercontent.com/zer0Kerbal/zer0Kerbal/zed'K/img/NL.png "Dutch"  
+[CN]: https://raw.githubusercontent.com/zer0Kerbal/zer0Kerbal/zed'K/img/CH.png "中文"
+[DE]: https://raw.githubusercontent.com/zer0Kerbal/zer0Kerbal/zed'K/img/DE.png "Deutsch"
+[ES]: https://raw.githubusercontent.com/zer0Kerbal/zer0Kerbal/zed'K/img/ES.png "Español"
+[FR]: https://raw.githubusercontent.com/zer0Kerbal/zer0Kerbal/zed'K/img/FR.png "Français"
+[IT]: https://raw.githubusercontent.com/zer0Kerbal/zer0Kerbal/zed'K/img/IT.png "Italiano"
+[JA]: https://raw.githubusercontent.com/zer0Kerbal/zer0Kerbal/zed'K/img/JA.png "日本語"
+[KO]: https://raw.githubusercontent.com/zer0Kerbal/zer0Kerbal/zed'K/img/KO.png "한국어"
+[MX]: https://raw.githubusercontent.com/zer0Kerbal/zer0Kerbal/zed'K/img/MX.png "Mexicano Español"
+[NL]: https://raw.githubusercontent.com/zer0Kerbal/zer0Kerbal/zed'K/img/NL.png "Dutch"
 [NO]: https://raw.githubusercontent.com/zer0Kerbal/zer0Kerbal/zed'K/img/NO.png "Norsk"
-[PO]: https://raw.githubusercontent.com/zer0Kerbal/zer0Kerbal/zed'K/img/PO.png "Polski"  
-[RU]: https://raw.githubusercontent.com/zer0Kerbal/zer0Kerbal/zed'K/img/RU.png "Русский"  
-[SW]: https://raw.githubusercontent.com/zer0Kerbal/zer0Kerbal/zed'K/img/SW.png "Svenska"  
+[PO]: https://raw.githubusercontent.com/zer0Kerbal/zer0Kerbal/zed'K/img/PO.png "Polski"
+[RU]: https://raw.githubusercontent.com/zer0Kerbal/zer0Kerbal/zed'K/img/RU.png "Русский"
+[SW]: https://raw.githubusercontent.com/zer0Kerbal/zer0Kerbal/zed'K/img/SW.png "Svenska"
 [TW]: https://raw.githubusercontent.com/zer0Kerbal/zer0Kerbal/zed'K/img/TW.png "国语"
 
 [curseforge]: https://www.curseforge.com/members/zer0kerbal/projects
@@ -273,7 +278,9 @@ or [![CKAN][CKAN:img]][CKAN:url]
 [albertkermin]: https://forum.kerbalspaceprogram.com/index.php?/profile/110967-*/ "AlbertKermin"
 [cobaltwolf]: https://forum.kerbalspaceprogram.com/index.php?/profile/105588-*/ "CobaltWolf"
 [dmagic]: https://forum.kerbalspaceprogram.com/index.php?/profile/57416-*/ "DMagic"
-[beale]: https://forum.kerbalspaceprogram.com/index.php?/profile/70533-*/ "Beale" 
+[beale]: https://forum.kerbalspaceprogram.com/index.php?/profile/70533-*/ "Beale"
+[kospy]: https://forum.kerbalspaceprogram.com/index.php?/profile/33868-*/ "KospY"
+[igorz]: https://forum.kerbalspaceprogram.com/index.php?/profile/155445-*/ "IgorZ"
 [zer0Kerbal]: https://forum.kerbalspaceprogram.com/index.php?/profile/190933-*/ "zer0Kerbal"
 
 [IMG:flg:0]: https://via.placeholder.com/256x160png/ffffff/bada55?text=KGEx "Mini Sample Return Capsule Flag"
