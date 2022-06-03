@@ -17,7 +17,7 @@ An addon that adds science packages that must be constructed prior to use for Ke
 
 
 
-## By [`zer0Kerbal`][zer0Kerbal], originally by [`AlbertKermin`][albertkKermin] and [`CobaltWolf`][cobaltwolf]  
+## By [`zer0Kerbal`][zer0Kerbal], originally by [`AlbertKermin`][albertKermin] and [`CobaltWolf`][cobaltwolf]  
 
 adopted with *express* permission and brought to you by *KerbSimpleCo*
 
@@ -271,7 +271,7 @@ or [![CKAN][CKAN:img]][CKAN:url]
 [youtube]: https://www.youtube.com/channel/UCp9c8IaK4Gjgfj3O9QxrbDw
 
 [albertkermin]: https://forum.kerbalspaceprogram.com/index.php?/profile/110967-*/ "AlbertKermin"
-[cobatwolf]: https://forum.kerbalspaceprogram.com/index.php?/profile/105588-*/ "CobatWolf"
+[cobaltwolf]: https://forum.kerbalspaceprogram.com/index.php?/profile/105588-*/ "CobaltWolf"
 [dmagic]: https://forum.kerbalspaceprogram.com/index.php?/profile/57416-*/ "DMagic"
 [beale]: https://forum.kerbalspaceprogram.com/index.php?/profile/70533-*/ "Beale" 
 [zer0Kerbal]: https://forum.kerbalspaceprogram.com/index.php?/profile/190933-*/ "zer0Kerbal"
