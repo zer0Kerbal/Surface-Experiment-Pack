@@ -93,6 +93,6 @@ To install, place the `GameData` folder inside your Kerbal Space Program folder:
   * [Module Manager /L][mml]
 
 [kas]: https://forum.kerbalspaceprogram.com/index.php?/topic/142594-*/ "Kerbal Attachment System (KAS)"
-[kis: https://forum.kerbalspaceprogram.com/index.php?/topic/149848-*/ "Kerbal Inventory System (KIS)"
+[kis]: https://forum.kerbalspaceprogram.com/index.php?/topic/149848-*/ "Kerbal Inventory System (KIS)"
 [mm]: https://forum.kerbalspaceprogram.com/index.php?/topic/50533-*/ "Module Manager"
 [mml]: https://github.com/net-lisias-ksp/ModuleManager "Module Manager /L"
